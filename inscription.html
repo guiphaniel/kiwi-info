@@ -5,6 +5,92 @@
     <title>Inscription</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="blog.html">Blog</a>
+                    <ul>
+                        <li><a href="articles/article1.html">Article 1</a></li>
+                        <li><a href="articles/article2.html">Article 2</a></li>
+                        <li><a href="articles/article3.html">Article 3</a></li>
+                        <li><a href="articles/article4.html">Article 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="inscription.html">Inscription</a></li>
+                <li><a href="les_chiffres.html">Les chiffres</a></li>
+            </ul>
+        </nav>
+        <h1>Inscription</h1>
+    </header>
+    <main>        
+        <h2>Formulaire</h2>
+        <p>Afin de bénéficier de l'intégralité de notre offre, inscivez-vous ici.</p>
+        <form action="https://ressources.site/" method="post" enctype=”multipart/form-data”>         
+            <div>
+                <fieldset>
+                <legend>Vos coordonnées</legend>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="xyz@email.com" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password">
+                <label for="password2">Vérification du mot de passe</label>
+                <input type="password2" name="password2" id="password2">
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                <label for="prenom">Prenom</label>
+                <input type="text" name="prenom" id="prenom" placeholder="Prenom" required>
+                <label for="telephone">Numéro de téléphone</label>
+                <input type="tel" name="telephone" id="telephone" placeholder="XXXXXXXXXX" pattern="[0-9]*" required>
+                <label for="birthdate">Date de naissance</label>
+                <input type="date" name="birthdate" id="birthdate" required>
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address" required>
+                <label for="codePostal">Code postal</label>
+                <input type="text" name="codePostal" id="codePostal" pattern="[0-9]{5}" required>
+                <label for="ville">Ville</label>
+                <input type="text" name="ville" id="ville" required>
+                <label for="sex"></label>              
+            </fieldset> 
+            <fieldset>
+                <legend>Vos informations</legend>
+                <label for="sex">Sexe</label>
+                <div id="sex">
+                    <input type="radio" name="sexe" value="homme" id="homme"> <label for="homme">Homme</label> 
+                    <input type="radio" name="sexe" value="femme" id="femme"> <label for="femme">Femme</label>
+                    <input type="radio" name="sexe" value="autre" id="autre" checked> <label for="autre">Autre</label> 
+                </div>
+                <label for="photo">Avatar</label>
+                <input type="file" name="photo" id="photo" accept="image/png, image/jpeg" multiple=false required>
+                <label for="loisirs">Loisirs</label>
+                <div id=loisirs>
+                    <input type="checkbox" name="loisirs[]" value="lecture" id="lecture"> <label for="lecture">Lecture</label>
+                    <input type="checkbox" name="loisirs[]" value="jeux" id="jeux"> <label for="jeux">Jeux vidéos</label>
+                    <input type="checkbox" name="loisirs[]" value="musique" id="musique"> <label for="musique">Musique</label>
+                </div>
+                <label for="couleur">Couleur préférée</label>
+                <input type="color" name="couleur" id="couleur" required>
+            </fieldset>
+            </div>              
+            <div>
+                <button type="submit">Soumettre</button>
+            </div>            
+        </form>
+    </main>
+    <footer>
+        <p>&copy Guilhem RICHAUD</p>
+        <a href="contact.html">Contact</a>
+        <h2>Les derniers articles :</h2>    
+        <nav>
+            <ul>
+                <li><a href="">Article 2</a></li>
+                <li><a href="">Article 3</a></li>
+                <li><a href="">Article 4</a></li>
+            </ul>
+        </nav>    
+    </footer>
 </body>
 </html>
