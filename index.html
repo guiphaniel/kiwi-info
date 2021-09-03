@@ -12,12 +12,14 @@
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <ol><!-- un ol (ou un ul) ne peut être enfant d'un ul, il faut le placer dans le précédent li. Préférez un ul dans ce cas présent -->
-                    <li><a href="articles/article1.html">Article 1</a></li>
-                    <li><a href="articles/article2.html">Article 2</a></li>
-                    <li><a href="articles/article3.html">Article 3</a></li>
-                    <li><a href="articles/article4.html">Article 4</a></li>
-                </ol>
+                <li>
+                    <ul>
+                        <li><a href="articles/article1.html">Article 1</a></li>
+                        <li><a href="articles/article2.html">Article 2</a></li>
+                        <li><a href="articles/article3.html">Article 3</a></li>
+                        <li><a href="articles/article4.html">Article 4</a></li>
+                    </ul>
+                </li>
                 <li><a href="inscription.html">Inscription</a></li>
                 <li><a href="les_chiffres.html">Les chiffres</a></li>
             </ul>
@@ -67,10 +69,14 @@
     <footer>
         <p>&copy Guilhem RICHAUD</p>
         <a href="contact.html">Contact</a>
-        <p>Les derniers articles :</p><!-- mettez plutôt un h2 -->        
-        <a href="articles/article2.html">Article 2</a><!-- cette liste de lien dans un ul qui lui même sera dans un nav car il s'agit d'une navigation -->
-        <a href="articles/article3.html">Article 3</a>
-        <a href="articles/article4.html">Article 4</a>
+        <h2>Les derniers articles :</h2>    
+        <nav>
+            <ul>
+                <li><a href="">Article 2</a></li>
+                <li><a href="">Article 3</a></li>
+                <li><a href="">Article 4</a></li>
+            </ul>
+        </nav>    
     </footer>
 </body>
 </html>
