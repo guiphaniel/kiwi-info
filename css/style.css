@@ -18,6 +18,15 @@ header nav {
     transition: all ease-in-out 0.5s;
 }
 
+#checkNavSpan {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: brown;
+}
+
 header nav ul {
     list-style: none; 
 }
