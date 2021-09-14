@@ -3,23 +3,55 @@
     margin: 0;
 }
 
-header nav ul {
-    background-color: rgb(214, 92, 11);
+header nav {
     position: fixed;
+    display: flex;
+    flex-direction: column-reverse;
     width: 100%;
-    /*height: 50px;*/
+}
+
+#checkNav {
+    display: inline-block;
+    width: 100vw;
+    height: 82px;
+    transform: translateY(-560%);
+    transition: all ease-in-out 0.5s;
+}
+
+header nav ul {
+    list-style: none; 
+}
+
+header nav ul li {
     width: 100%;
+}
+
+header nav ul li a {
+    width: 100%;
+}
+
+header nav > ul {
+    background-color: rgb(214, 92, 11);
+    width: 100%;    
+    /*height: 50px;*/    
     display: flex; 
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;  
-    list-style-type: none; 
+    justify-content: space-around;     
     padding: 0;
+    transform: translateY(-100%);
+    transition: all ease-in-out 0.5s;
+}
+
+header nav ul li {
+    transition: all ease-in-out 0.5s;
 }
 
 header nav ul a {
     text-decoration: none;
     display: inline-block;
-    padding: 14px 10px;
+    text-align: center;
+    padding: 14px 0;
     color: black;
 }
 
@@ -27,12 +59,12 @@ header nav ul a {
     height: 50px;
 }
 
-header nav ul ul {
-    display: none;
+header nav ul ul li {
+    background-color: rgb(255, 166, 0);
 }
 
 header section {
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 main picture {
@@ -53,9 +85,13 @@ main picture img {
 
 .user-tag {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 30px;
+    width: 100%;
+}
+
+.user-tag :nth-last-child(1){
+    
 }
 
 .user-tag a {
@@ -65,4 +101,62 @@ main picture img {
 .user-tag img {
     height: 30px;
     border-radius: 100%;
+}
+
+/*RESPONSIVE*/
+
+@media screen and (min-width: 568px) {
+    #checkNav {
+        display: none;
+    }
+
+    /*header nav {
+        flex-direction: row;
+    }*/
+
+    header nav ul {        
+        flex-direction: row;
+        transform: translateY(0);
+    }
+
+    header nav ul ul {      
+        width: 16.6%;  
+        position: absolute;
+        transform: translateY(-200%);
+        transition: all ease-in-out 0.5s;
+        z-index: -2;
+    }
+}
+
+/*ACTIONS*/
+
+header nav > ul > li:hover ul {
+    display: flex;
+    flex-direction: column; 
+
+}
+
+header nav > ul > li:hover {
+    background-color: aliceblue;
+}
+
+header nav > ul > li {
+    height: auto;
+}
+
+header nav > ul > li > ul > li:hover {
+    background-color: rgb(154, 164, 173);
+}
+
+header nav > ul > li:hover ul {
+    transform: translateY(0);
+}
+
+header #checkNav:checked {
+    transform: translateY(0);
+}
+
+header #checkNav:checked ~ul {
+    display: flex;
+    transform: translateY(0);
 }
