@@ -1,6 +1,20 @@
-*{
+*, *::after, *::before{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #032a52;
+    --color-secondary: #ffffff;
+    --color-background: #ffffff;
+    --color-text: #efefef;
+    --color-nav: #7de05f;
+    --color-nav-hover: #a1ec8a;
+}
+
+header nav span {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header nav {
@@ -13,18 +27,34 @@ header nav {
 #checkNav {
     display: inline-block;
     width: 100vw;
-    height: 82px;
-    transform: translateY(-560%);
-    transition: all ease-in-out 0.5s;
+    height: 80px;
 }
 
 #checkNavSpan {
     content: "";
     display: inline-block;
     position: absolute;
+    left: calc(50%);
     width: 10px;
-    height: 10px;
-    background-color: brown;
+    height: 80px;
+    border-radius: 10px;
+    background-color: var(--color-nav);
+    transform-origin: right;
+    transform: translateX(27px) rotate(45deg);
+}
+
+#checkNavSpan::before {
+    content: "";
+    top: 36px;
+    left: -35px;
+    
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height:100%;
+    border-radius: 10px;
+    background-color: var(--color-nav);
+    transform: rotate(-90deg);
 }
 
 header nav ul {
@@ -33,22 +63,31 @@ header nav ul {
 
 header nav ul li {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul li a {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-header nav > ul {
-    background-color: rgb(214, 92, 11);
+header nav ul li span {
+    width: 100%;
+    display: none;
+    padding: 15px 0;
+}
+
+header nav ul {
+    background-color: var(--color-nav);
     width: 100%;    
     /*height: 50px;*/    
     display: flex; 
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;     
-    padding: 0;
-    transform: translateY(-100%);
+    padding: 0;    
     transition: all ease-in-out 0.5s;
 }
 
@@ -60,7 +99,7 @@ header nav ul a {
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    padding: 14px 0;
+    padding: 0.5em 0;
     color: black;
 }
 
@@ -68,8 +107,8 @@ header nav ul a {
     height: 50px;
 }
 
-header nav ul ul li {
-    background-color: rgb(255, 166, 0);
+header nav ul ul {
+    display: none;
 }
 
 header section {
@@ -83,8 +122,9 @@ main picture {
 
 main picture img {
     width: 100%;
-    max-width: 900px;
-    margin: auto;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 50px;
 }
 
 #share {
@@ -99,10 +139,6 @@ main picture img {
     width: 100%;
 }
 
-.user-tag :nth-last-child(1){
-    
-}
-
 .user-tag a {
     text-align: center;
 }
@@ -112,60 +148,143 @@ main picture img {
     border-radius: 100%;
 }
 
+header nav > ul > li {
+    height: auto;
+}
+
+#nav-blog {
+    display: flex;
+    flex-direction: column;
+}
+
+#blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#articles {
+    display: flex;
+    flex-direction: column;
+}
+
+#articles a {
+    padding-left: 3em;
+}
+
+.icon {
+    width: 3em;
+    height: 3em;    
+}
+
+/*ACTIONS*/
+
+header nav ul li:hover {
+    background-color: var(--color-nav-hover);
+}
+
+header nav ul li ul li:hover {
+    background-color: var(--color-nav-hover);
+}
+
+header #checkNav:checked ~ul {
+    flex-direction: column;
+}
+
+header #checkNav:checked ~ul > li {
+    justify-content: flex-start;  
+}
+
+header #checkNav:checked ~ul > li > span {
+    display: inline;
+}
+
+header #checkNav:checked #blog {
+    justify-content: flex-start;
+}
+
+header #checkNav:checked ~ul li span {
+    display: inline;
+}
+
+header #checkNav:checked ~ul ul {
+    display: inline;
+}
+
+header #checkNav:checked ~ul {
+    animation: derouler 1s;
+}
+
+header #checkNav:checked ~ul {
+    animation: derouler 1s;
+}
+
+header #checkNav:checked ~ul .icon {
+    margin-left: 2em;
+}
+
+header #checkNav:checked ~#checkNavSpan {
+    transform: rotate(-135deg) translateX(5px);
+    
+}
+
+@keyframes derouler {
+    from {
+        transform: translateY(calc(-100% + 3em));
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.fa-primary {
+    color: var(--color-primary);
+}
+
+.fa-secondary {
+    color: var(--color-secondary);
+}
+
 /*RESPONSIVE*/
 
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 800px) {
     #checkNav {
         display: none;
     }
 
-    /*header nav {
-        flex-direction: row;
-    }*/
-
     header nav ul {        
         flex-direction: row;
-        transform: translateY(0);
     }
 
     header nav ul ul {      
         width: 16.6%;  
         position: absolute;
-        transform: translateY(-200%);
+        display: flex;
+        flex-direction: column; 
+        opacity: 0;
         transition: all ease-in-out 0.5s;
         z-index: -2;
+        transform: translateY(-100%);
     }
-}
 
-/*ACTIONS*/
+    header nav ul li span {
+        display: inline;
+    }
 
-header nav > ul > li:hover ul {
-    display: flex;
-    flex-direction: column; 
+    header nav > ul > li:hover ul {
+        opacity: 100;
+        transform: translateY(0);
+    }
 
-}
+    header nav ul li ul li:hover {
+        background-color: var(--color-nav-hover);
+    }
 
-header nav > ul > li:hover {
-    background-color: aliceblue;
-}
+    .icon {
+        margin-left: 1em;
+    }
 
-header nav > ul > li {
-    height: auto;
-}
-
-header nav > ul > li > ul > li:hover {
-    background-color: rgb(154, 164, 173);
-}
-
-header nav > ul > li:hover ul {
-    transform: translateY(0);
-}
-
-header #checkNav:checked {
-    transform: translateY(0);
-}
-
-header #checkNav:checked ~ul {
-    display: flex;
-    transform: translateY(0);
+    #articles a {
+        padding-left: 0;
+    }
 }
