@@ -28,6 +28,8 @@ header nav {
     display: inline-block;
     width: 100vw;
     height: 80px;
+    opacity: 0;
+    cursor: pointer;
 }
 
 #checkNavSpan {
@@ -39,22 +41,29 @@ header nav {
     height: 80px;
     border-radius: 10px;
     background-color: var(--color-nav);
-    transform-origin: right;
-    transform: translateX(27px) rotate(45deg);
+    transform-origin: bottom;
+    transform: rotate(45deg);
+    z-index: -1;
 }
 
 #checkNavSpan::before {
     content: "";
-    top: 36px;
-    left: -35px;
-    
+    top: -4px;
+    left: 4px;
     display: inline-block;
     position: absolute;
     width: 10px;
     height:100%;
     border-radius: 10px;
     background-color: var(--color-nav);
+    transform-origin: bottom;
     transform: rotate(-90deg);
+}
+
+header #checkNav:checked ~#checkNavSpan {
+    transition: all 1s ease-in-out;
+    transform-origin: bottom;    
+    transform: rotate(225deg) translateY(50px) translateX(40px);
 }
 
 header nav ul {
@@ -223,11 +232,6 @@ header #checkNav:checked ~ul .icon {
     margin-left: 2em;
 }
 
-header #checkNav:checked ~#checkNavSpan {
-    transform: rotate(-135deg) translateX(5px);
-    
-}
-
 @keyframes derouler {
     from {
         transform: translateY(calc(-100% + 3em));
@@ -247,8 +251,8 @@ header #checkNav:checked ~#checkNavSpan {
 
 /*RESPONSIVE*/
 
-@media screen and (min-width: 800px) {
-    #checkNav {
+@media screen and (min-width: 920px) {
+    #checkNav, #checkNavSpan {
         display: none;
     }
 
@@ -287,4 +291,13 @@ header #checkNav:checked ~#checkNavSpan {
     #articles a {
         padding-left: 0;
     }
+
+    header #checkNav:checked ~ul {
+        flex-direction: row;
+    }    
+}
+
+#offset {
+    width: 100vw;
+    height: 170px;
 }
