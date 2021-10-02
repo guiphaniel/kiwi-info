@@ -301,3 +301,13 @@ header #checkNav:checked ~ul .icon {
     width: 100vw;
     height: 170px;
 }
+
+form fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+}
+
+form fieldset input{
+    max-width: 250px;
+}
