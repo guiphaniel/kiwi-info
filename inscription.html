@@ -126,7 +126,7 @@
                         <label for="telephone">Numéro de téléphone</label>
                     </div>
                     <div class="input-group">
-                        <input type="date" name="birthdate" id="birthdate" placeholder=" " max="2021-12-31" required>
+                        <input type="date" name="birthdate" id="birthdate" placeholder=" " min='1899-01-01' max="2021-12-31" required>
                         <span class="barre"></span>
                         <label for="birthdate">Date de naissance</label>
                     </div>
@@ -224,5 +224,6 @@
     </footer>
     <script src="js/valid-mail.js"></script>
     <script src="js/check-active.js"></script>
+    <script src="js/valid-birthdate.js"></script>
 </body>
 </html>
