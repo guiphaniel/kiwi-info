@@ -203,6 +203,7 @@ form fieldset {
     flex-direction: column;
     padding: 1em 1em;
     padding-top: 2em;
+    max-width: 890px;
 }
 
 form fieldset input{
@@ -243,6 +244,17 @@ form fieldset input{
   transition: 0.5s ease-in-out all; 
   -moz-transition: 0.5s ease-in-out all; 
   -webkit-transition: 0.5s ease-in-out all;
+}
+
+.check-group {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.check-group input {
+    width: auto;
 }
 
 
@@ -361,10 +373,6 @@ header #checkNav:checked ~ul .icon {
     header #checkNav:checked ~ul {
         flex-direction: row;
     }    
-
-    form fieldset input, .barre {
-        max-width: 890px;
-    }
 
     #offset {
         width: 100vw;
