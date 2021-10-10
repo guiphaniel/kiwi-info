@@ -267,6 +267,12 @@ input:focus ~ .barre:before, input:focus ~ .barre:after {
 }
 
 
+/*JS*/
+
+.active {
+    background-color: var(--color-nav-hover);
+}
+
 /*ACTIONS*/
 
 header nav ul li:hover {
