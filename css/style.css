@@ -125,6 +125,11 @@ header section {
     padding-top: 100px;
 }
 
+main {
+    max-width: 890px;
+    margin: 0 auto;
+}
+
 main, footer {
     padding: 0 50px;
 }
@@ -136,7 +141,6 @@ main picture {
 
 main picture img {
     width: 100%;
-    max-width: 800px;
     margin: 50px auto;
     padding: 0 50px;
 }
@@ -203,7 +207,6 @@ form fieldset {
     flex-direction: column;
     padding: 1em 1em;
     padding-top: 2em;
-    max-width: 890px;
 }
 
 form fieldset input{
