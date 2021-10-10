@@ -80,7 +80,8 @@ header nav ul li {
 header nav ul li a {
     width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
 }
 
 header nav ul li span {
@@ -123,6 +124,11 @@ header nav ul ul {
 
 header section {
     padding-top: 100px;
+}
+
+.article-title {
+    text-align: left;
+    padding: 0 1em;
 }
 
 main {
@@ -243,7 +249,7 @@ form fieldset input{
   height:2px; 
   width:0;
   position:absolute;
-  background:#5264AE; 
+  background:var(--color-nav); 
   transition: 0.5s ease-in-out all; 
   -moz-transition: 0.5s ease-in-out all; 
   -webkit-transition: 0.5s ease-in-out all;
