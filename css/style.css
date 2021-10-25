@@ -223,6 +223,7 @@ form fieldset input{
     width: 100%;
     border: none;
     outline: none; 
+    user-select: none;
 }
 
 .input-group input {
@@ -241,6 +242,7 @@ form fieldset input{
     color:var(--color-primary); 
     position:relative;
     pointer-events:none;
+    user-select: none;
     bottom: 1em;
     left: 0.5em;
     transition: 0.5s ease-in-out all; 
