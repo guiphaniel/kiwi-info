@@ -25,6 +25,10 @@ a {
     --color-nav-hover: #a1ec8a;
 }
 
+header {
+    height: 80px;
+}
+
 #navbar span {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -95,7 +99,6 @@ header #checkNav:checked ~#checkNavSpan {
 #navbar ul li span {
     width: 100%;
     display: none;
-    padding: 15px 0;
 }
 
 #navbar ul {
