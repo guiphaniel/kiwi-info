@@ -137,6 +137,14 @@ header section {
 main {
     max-width: 890px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }
 
 main, footer {
@@ -402,9 +410,10 @@ header #checkNav:checked ~ul .icon {
         flex-direction: row;
     }    
 
-    #offset {
-        width: 100vw;
-        height: 40px;
+    main {
+        max-width: 890px;
+        margin: 0 auto;
+        flex-direction: row;
     }    
 }
 
