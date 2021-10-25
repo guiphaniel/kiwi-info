@@ -1,4 +1,4 @@
-const liens = document.querySelectorAll('a')
+const liens = document.querySelectorAll('#navbar a')
 
 liens.forEach((lien) => {
     if (lien.pathname === window.location.pathname) {
