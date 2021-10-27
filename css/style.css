@@ -108,6 +108,21 @@ header #checkNav:checked ~#checkNavSpan {
     transform: rotate(225deg) translateY(50px) translateX(40px);
 }
 
+header #checkNav:checked ~ul > li:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+header #checkNav:not(:checked) ~ul > li:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 10px;
+}
+
+header #checkNav:not(:checked) ~ul > li:first-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0;
+}
+
 #navbar ul li {
     width: 100%;
     display: flex;
@@ -136,7 +151,10 @@ header #checkNav:checked ~#checkNavSpan {
     justify-content: space-around;     
     padding: 0;    
     transition: all ease-in-out 0.5s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
 
 #navbar ul li {
     transition: all ease-in-out 0.5s;
@@ -156,8 +174,9 @@ header section {
 }
 
 #mostRead {
-    padding: 1em;
+    padding: 2em;
     background-color: var(--color-nav-hover);
+    border-radius: 10px;
 }
 
 #mostRead a{
@@ -319,7 +338,10 @@ form fieldset input{
 }
 
 #comments {
-    padding: 0 5em;
+    margin: 0 5em;
+    padding: 2em;
+    background-color: gray;
+    border-radius: 10px;
 }
 
 
@@ -410,6 +432,13 @@ header #checkNav:checked ~ul .icon {
         transition: all ease-in-out 0.5s;
         transform: translateY(-100%);
         z-index: -1;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    #navbar ul ul li:last-child {    
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     #navbar ul li span {
@@ -436,6 +465,19 @@ header #checkNav:checked ~ul .icon {
     header #checkNav:checked ~ul {
         flex-direction: row;
     }    
+
+    header #checkNav:checked ~ul > li:last-child {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 10px;
+    }
+
+    #navbar > ul > li:last-child {
+        border-bottom-right-radius: 10px;
+    }
+
+    #navbar > ul > li:first-child {
+        border-bottom-left-radius: 10px;
+    }
 
     main {
         max-width: 100%;
