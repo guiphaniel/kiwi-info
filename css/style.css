@@ -435,6 +435,7 @@ form fieldset input{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
+    max-width: 20em;
 }
 
 .check-group input {
