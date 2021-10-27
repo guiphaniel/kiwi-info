@@ -34,6 +34,7 @@ a {
 }
 
 header {
+    top: 0;
     height: 124px;
     position: fixed;
     width: 100%;
@@ -154,12 +155,25 @@ header section {
     padding: 0 1em;
 }
 
+#mostRead {
+    padding: 1em;
+    background-color: var(--color-nav-hover);
+}
+
+#mostRead a{
+    display: flex;
+    align-items: center;
+}
+
+#mostRead .article-title {
+    width: 100%;
+}
+
 main {
-    padding: 0 50px;
-    padding-top: 15em;
-    padding-bottom: 5em;
+    padding: 5em;    
     max-width: 890px;
     margin: 0 auto;
+    margin-top: 10em;
 }
 
 aside {
@@ -304,6 +318,10 @@ form fieldset input{
     width: auto;
 }
 
+#comments {
+    padding: 0 5em;
+}
+
 
 /* active state */
 input:focus ~ .barre:before, input:focus ~ .barre:after {
@@ -384,7 +402,7 @@ header #checkNav:checked ~ul .icon {
     }
 
     #navbar ul ul {    
-        width: 16.6%;  
+        width: 16.7%;  
         position: absolute;
         display: flex;
         flex-direction: column; 
@@ -420,13 +438,27 @@ header #checkNav:checked ~ul .icon {
     }    
 
     main {
-        margin: 0 auto;
-        padding-top: 10em;
+        max-width: 100%;
+        margin-top: 124px;
     }    
 
     #aside-group {
+        width: 100%;
         display: flex;
         flex-direction: row;
+    }
+
+    #aside-group aside {
+        width: 20em;
+    }
+
+    #aside-group article {
+        padding-right: 5em;
+    }
+
+    #aside-group article .intro-pic {
+        max-width: 50em;
+        margin: 0 auto;
     }
 }
 
