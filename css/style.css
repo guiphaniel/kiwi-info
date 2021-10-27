@@ -67,7 +67,7 @@ h2 {
     font-size: 2em;
 }
 
-p, a, span, label, em {
+p, a, span, label, em, td, th {
     font-family: "DINNextW1G";
 }
 
