@@ -92,20 +92,29 @@
         <h2>Formulaire</h2>
         <p>N'hésitez pas à remplir ce formulaire pour toute demande nous concernant.</p>
         <form action="https://ressources.site/" method="post">          
-            <div>
-                <fieldset>
+            <fieldset>
                 <legend>Vos coordonnées</legend>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="xyz@email.com" required>
-                <label for="telephone">Numéro de téléphone</label>
-                <input type="tel" name="telephone" id="telephone" placeholder="XXXXXXXXXX" pattern="[0-9]*" required>
-                <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" placeholder="Nom" required>
-                <label for="prenom">Prenom</label>
-                <input type="text" name="prenom" id="prenom" placeholder="Prenom" required>
+                <div class="input-group">
+                    <input type="email" name="email" id="email" placeholder=" " required>
+                    <span class="barre"></span>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="telephone" id="telephone" placeholder=" " pattern="[0-9]*" required>
+                    <span class="barre"></span>
+                    <label for="telephone">Numéro de téléphone</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="nom" id="nom" placeholder=" " required>
+                    <span class="barre"></span>
+                    <label for="nom">Nom</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="prenom" id="prenom" placeholder=" " required>
+                    <span class="barre"></span>
+                    <label for="prenom">Prenom</label>
+                </div>                
             </fieldset> 
-            </div>
-              
             <div>
                 <label for="sujet">Sujet du message</label>
                 <input type="text" name="sujet" id="sujet" placeholder="Sujet" required>
@@ -113,9 +122,8 @@
                 <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message ici" required></textarea>
             </div>                     
             <div>
-                <button type="submit">Soumettre</button>
+                <button type="submit" class="submit">Soumettre</button>
             </div>
-            
         </form>
     </main>
     <footer>
@@ -169,7 +177,5 @@
     </footer>
     <script src="js/valid-mail.js"></script>
     <script src="js/check-active.js"></script>
-    <script src="js/valid-birthdate.js"></script>
-    <script src="js/nav-articles-h1.js"></script>
 </body>
 </html>
