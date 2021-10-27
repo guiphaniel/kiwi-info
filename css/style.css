@@ -217,20 +217,27 @@ main picture img {
     justify-content: flex-end;
 }
 
-.user-tag {
+.comment-infos {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 30px;
     width: 100%;
+    margin-bottom: 1em;
 }
 
-.user-tag a {
-    text-align: center;
+.comment-user {
+    display: flex;
+    align-items: center;
 }
 
-.user-tag img {
+.comment-user img {
     height: 30px;
     border-radius: 100%;
+}
+
+.comment-user .pseudo {
+    margin: 0 1em;
 }
 
 #navbar > ul > li {
@@ -340,8 +347,19 @@ form fieldset input{
 #comments {
     margin: 0 5em;
     padding: 2em;
-    background-color: gray;
     border-radius: 10px;
+    background-color: gray;
+}
+
+.comment {
+    margin: 2em 0;
+    padding: 2em;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+.comment:last-child {
+    margin-bottom: 0;
 }
 
 
