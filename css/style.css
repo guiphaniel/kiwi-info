@@ -65,7 +65,6 @@ h1 {
 
 h2 {
     font-size: 2em;
-    padding-bottom: 0.5em;
 }
 
 p, a, span, label, em {
@@ -211,13 +210,15 @@ header section {
 #mostRead {
     display: flex;
     flex-direction: column;
-    width: 20em;
+    width: 100%;
     padding: 2em;
-    background-color: var(--color-nav-hover);
+    margin-top: 2em;
+    background-color: var(--color-nav);
     border-radius: var(--border-radius);
 }
 
 #mostRead a{
+    padding: 1em;
     display: flex;
     align-items: center;
     border-radius: var(--border-radius);
@@ -228,7 +229,7 @@ header section {
 
 
 #mostRead a:hover{
-    background-color: var(--color-nav);
+    background-color: var(--color-nav-hover);
 }
 
 #mostRead .article-title {
@@ -236,10 +237,10 @@ header section {
 }
 
 main {
-    padding: 2em;    
+    padding: 0 2em;    
     max-width: 890px;
     margin: 0 auto;
-    margin-top: 12em;
+    margin-top: 14em;
 }
 
 main picture {
@@ -253,6 +254,7 @@ main picture img {
 }
 
 #share {
+    margin-top: 2em;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -310,9 +312,63 @@ main picture img {
     height: 3em;    
 }
 
-#offset {
-    width: 100vw;
-    height: 170px;
+footer {
+    margin-top: 2em;
+    padding: 2em;
+    background-color: var(--color-nav);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer h2 {
+    margin-bottom: 1em;
+}
+
+footer a {
+    padding: 0;
+}
+
+footer .last-article {
+    padding: 1em;
+}
+
+footer .last-article span {
+    width: 90%;
+    padding-right: 0;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+footer address {
+    display: flex;
+    flex-direction: column;
+}
+
+footer p {
+    margin-top: 1em;
+}
+
+footer div ul a {
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    transition: 0.5s ease-in-out all; 
+    -moz-transition: 0.5s ease-in-out all; 
+    -webkit-transition: 0.5s ease-in-out all;
+}
+
+footer div ul a:hover {
+    background-color: var(--color-nav-hover);
 }
 
 /*FORMS*/
@@ -387,6 +443,7 @@ form fieldset input{
 
 #comments {
     margin: 0 2em;
+    margin-top: 2em;
     padding: 2em;
     border-radius: var(--border-radius);
     background-color: gray;
@@ -547,6 +604,7 @@ header #checkNav:checked ~ul .icon {
         width: 100%;
         display: flex;
         flex-direction: row;
+        padding-top: 2em;
     }
 
     #aside-group article {
@@ -558,8 +616,23 @@ header #checkNav:checked ~ul .icon {
         margin: 0 auto;
     }
 
+    #mostRead {
+        width: 20em;
+        margin-top: 0;
+    }
+
     main picture img {
         padding: 0 50px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    footer address {
+        align-items: flex-start;
     }
 }
 
