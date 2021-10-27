@@ -137,8 +137,6 @@ header section {
 main {
     max-width: 890px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
 }
 
 aside {
@@ -413,7 +411,6 @@ header #checkNav:checked ~ul .icon {
     main {
         max-width: 890px;
         margin: 0 auto;
-        flex-direction: row;
     }    
 }
 
