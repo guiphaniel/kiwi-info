@@ -1,3 +1,20 @@
+@font-face {font-family: "Neue Kabel W01 Black";
+	src: url("../fonts/0ef5c927253f0c37b54e6f94cd732784.eot"); /* IE9*/
+	src: url("../fonts/0ef5c927253f0c37b54e6f94cd732784.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("../fonts/0ef5c927253f0c37b54e6f94cd732784.woff2") format("woff2"), /* chrome、firefox */
+	url("../fonts/0ef5c927253f0c37b54e6f94cd732784.woff") format("woff"), /* chrome、firefox */
+	url("../fonts/0ef5c927253f0c37b54e6f94cd732784.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url("../fonts/0ef5c927253f0c37b54e6f94cd732784.svg#Neue Kabel W01 Black") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {font-family: "DINNextW1G";
+  src: url("../fonts/DINNextW1G.otf");
+}
+
+@font-face {font-family: "questrial";
+  src: url("../fonts/questrial.ttf") format("truetype");
+}
+
 *, *::after, *::before{
     padding: 0;
     margin: 0;
@@ -16,6 +33,10 @@ a {
     color: black;
 }
 
+em {
+    font-style: normal;
+}
+
 :root {
     --color-primary: #032a52;
     --color-secondary: #ffffff;
@@ -23,6 +44,7 @@ a {
     --color-text: #efefef;
     --color-nav: #7de05f;
     --color-nav-hover: #a1ec8a;
+    --border-radius: 10px;
 }
 
 .fa-primary {
@@ -33,12 +55,29 @@ a {
     color: var(--color-secondary);
 }
 
+h1, h2 {
+    font-family: "Neue Kabel W01 Black";
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+    padding-bottom: 0.5em;
+}
+
+p, a, span, label, em {
+    font-family: "DINNextW1G";
+}
+
 header {
     top: 0;
     height: 124px;
-    position: fixed;
+    position: absolute;
     width: 100%;
-    z-index: 1;
+    z-index: 100;
 }
 
 #logo-group {
@@ -54,10 +93,6 @@ header {
 #logo {
     height: 100%;
     margin: 0 1em;
-}
-
-#navbar span {
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 #navbar {
@@ -81,7 +116,7 @@ header {
     left: calc(50%);
     width: 10px;
     height: 80px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: var(--color-nav);
     transform-origin: bottom;
     transform: rotate(45deg);
@@ -96,7 +131,7 @@ header {
     position: absolute;
     width: 10px;
     height:100%;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: var(--color-nav);
     transform-origin: bottom;
     transform: rotate(-90deg);
@@ -174,14 +209,26 @@ header section {
 }
 
 #mostRead {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
     padding: 2em;
     background-color: var(--color-nav-hover);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 #mostRead a{
     display: flex;
     align-items: center;
+    border-radius: var(--border-radius);
+    transition: 0.5s ease-in-out all; 
+    -moz-transition: 0.5s ease-in-out all; 
+    -webkit-transition: 0.5s ease-in-out all;
+}
+
+
+#mostRead a:hover{
+    background-color: var(--color-nav);
 }
 
 #mostRead .article-title {
@@ -189,16 +236,10 @@ header section {
 }
 
 main {
-    padding: 5em;    
+    padding: 2em;    
     max-width: 890px;
     margin: 0 auto;
-    margin-top: 10em;
-}
-
-aside {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
+    margin-top: 12em;
 }
 
 main picture {
@@ -209,12 +250,12 @@ main picture {
 main picture img {
     width: 100%;
     margin: 50px auto;
-    padding: 0 50px;
 }
 
 #share {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .comment-infos {
@@ -281,7 +322,7 @@ form fieldset {
     flex-direction: column;
     padding: 1em 1em;
     padding-top: 2em;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
 form fieldset input{
@@ -345,16 +386,16 @@ form fieldset input{
 }
 
 #comments {
-    margin: 0 5em;
+    margin: 0 2em;
     padding: 2em;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: gray;
 }
 
 .comment {
     margin: 2em 0;
     padding: 2em;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: whitesmoke;
 }
 
@@ -508,10 +549,6 @@ header #checkNav:checked ~ul .icon {
         flex-direction: row;
     }
 
-    #aside-group aside {
-        width: 20em;
-    }
-
     #aside-group article {
         padding-right: 5em;
     }
@@ -519,6 +556,10 @@ header #checkNav:checked ~ul .icon {
     #aside-group article .intro-pic {
         max-width: 50em;
         margin: 0 auto;
+    }
+
+    main picture img {
+        padding: 0 50px;
     }
 }
 
