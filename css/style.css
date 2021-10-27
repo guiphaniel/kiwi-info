@@ -409,8 +409,12 @@ header #checkNav:checked ~ul .icon {
     }    
 
     main {
-        max-width: 890px;
         margin: 0 auto;
     }    
+
+    #aside-group {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
