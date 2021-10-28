@@ -146,43 +146,43 @@
                         <label for="ville">Ville</label>
                     </div>         
                 </fieldset> 
-            <fieldset>
-                <legend>Vos informations</legend>
-                <div>
-                    <h2>Sexe</h2>
-                    <div class="check-group">
-                        <input type="radio" name="sexe" value="homme" id="homme"> 
-                        <label for="homme">Homme</label> 
+                <fieldset>
+                    <legend>Vos informations</legend>
+                    <div>
+                        <h2>Sexe</h2>
+                        <div class="check-group">
+                            <input type="radio" name="sexe" value="homme" id="homme"> 
+                            <label for="homme">Homme</label> 
+                        </div>
+                        <div class="check-group">
+                            <input type="radio" name="sexe" value="femme" id="femme"> 
+                            <label for="femme">Femme</label>
+                        </div>
+                        <div class="check-group">
+                            <input type="radio" name="sexe" value="autre" id="autre" checked> 
+                            <label for="autre">Autre</label> 
+                        </div>
                     </div>
-                    <div class="check-group">
-                        <input type="radio" name="sexe" value="femme" id="femme"> 
-                        <label for="femme">Femme</label>
+                    <label for="photo">Avatar</label>
+                    <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
+                    <div id="loisirs">
+                        <h2>Loisirs</h2>
+                        <div class="check-group">
+                            <input type="checkbox" name="loisirs[]" value="lecture" id="lecture"> 
+                            <label for="lecture">Lecture</label>
+                        </div>
+                        <div class="check-group">
+                            <input type="checkbox" name="loisirs[]" value="jeux" id="jeux"> 
+                            <label for="jeux">Jeux vidéos</label>
+                        </div>
+                        <div class="check-group">
+                            <input type="checkbox" name="loisirs[]" value="musique" id="musique"> 
+                            <label for="musique">Musique</label>
+                        </div>
                     </div>
-                    <div class="check-group">
-                        <input type="radio" name="sexe" value="autre" id="autre" checked> 
-                        <label for="autre">Autre</label> 
-                    </div>
-                </div>
-                <label for="photo">Avatar</label>
-                <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
-                <div id="loisirs">
-                    <h2>Loisirs</h2>
-                    <div class="check-group">
-                        <input type="checkbox" name="loisirs[]" value="lecture" id="lecture"> 
-                        <label for="lecture">Lecture</label>
-                    </div>
-                    <div class="check-group">
-                        <input type="checkbox" name="loisirs[]" value="jeux" id="jeux"> 
-                        <label for="jeux">Jeux vidéos</label>
-                    </div>
-                    <div class="check-group">
-                        <input type="checkbox" name="loisirs[]" value="musique" id="musique"> 
-                        <label for="musique">Musique</label>
-                    </div>
-                </div>
-                <label for="couleur">Couleur préférée</label>
-                <input type="color" name="couleur" id="couleur">
-            </fieldset>
+                    <label for="couleur">Couleur préférée</label>
+                    <input type="color" name="couleur" id="couleur">
+                </fieldset>
             </div>              
             <div>
                 <button type="submit" class="submit">Soumettre</button>
@@ -254,8 +254,6 @@
             </nav>  
         </div>
     </footer>
-    <script src="js/valid-mail.js"></script>
-    <script src="js/check-active.js"></script>
-    <script src="js/valid-birthdate.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
