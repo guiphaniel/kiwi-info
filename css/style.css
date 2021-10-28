@@ -308,7 +308,6 @@ aside a{
     padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     border-radius: var(--border-radius);
     transition: 0.5s ease-in-out all; 
     -moz-transition: 0.5s ease-in-out all; 
@@ -328,7 +327,7 @@ aside .article-title {
 }
 
 aside li svg {
-    max-width: 20%;
+    max-width: 13%;
     margin-right: 1em;
 }
 
@@ -814,8 +813,8 @@ header #checkNav:checked ~ul .icon {
         margin-bottom: 0.5em;
     }    
 
-    aside a{
-        justify-content: flex-start;
+    aside li svg {
+        max-width: 20%;
     }
 
     .aside-content {
