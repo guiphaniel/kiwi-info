@@ -796,7 +796,7 @@ header #checkNav:checked ~ul .icon {
     }
 
     #aside-group article {
-        padding-right: 5em;
+        padding-right: 2em;
     }
 
     #aside-group article .intro-pic {
@@ -805,7 +805,8 @@ header #checkNav:checked ~ul .icon {
     }
 
     aside {
-        width: 20em;
+        min-width: 15%;
+        max-width: 15%;
         margin-top: 0;
     }
 
