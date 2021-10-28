@@ -65,19 +65,32 @@ table, th, td {
 }
 
 main table {
+    margin-top: 2em;
     font-size: min(3vw, 100%);
 }
 
-.red-side {
-    background-color: #ff6565;
+main h2 + p {
+    margin-top: 1em;
+}
+
+.blue-side-col {
+    background-color: #c4c4ff;
+}
+
+.red-side-col {
+    background-color: #ffb6b6;
 }
 
 .blue-side {
     background-color: #7979fe;
 }
 
+.red-side {
+    background-color: #ff6565;
+}
+
 .winner {
-    background-color: var(--color-nav-hover);
+    background-color: #a1ec8a;
 }
 
 :root {
