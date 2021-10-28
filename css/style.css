@@ -33,8 +33,9 @@ a {
     color: black;
 }
 
-em {
+em, strong {
     font-style: normal;
+    font-weight: normal;
 }
 
 :root {
@@ -69,6 +70,14 @@ h2 {
 
 p, a, span, label, em, td, th, ul {
     font-family: "DINNextW1G";
+}
+
+p {
+    text-align: justify;
+}
+
+img, iframe {
+    border-radius: var(--border-radius);
 }
 
 header {
@@ -326,6 +335,17 @@ main picture img {
     height: 3em;    
 }
 
+.section-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+.section-content img, .section-content iframe {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
 footer {
     margin-top: 2em;
     padding: 2em;
@@ -337,6 +357,7 @@ footer {
 
 footer h2 {
     margin-bottom: 1em;
+    text-align: center;
 }
 
 footer a {
@@ -350,10 +371,6 @@ footer .last-article {
 footer .last-article span {
     width: 90%;
     padding-right: 0;
-}
-
-footer h2 {
-    text-align: center;
 }
 
 footer div {
@@ -638,6 +655,15 @@ header #checkNav:checked ~ul .icon {
 
     main picture img {
         padding: 0 50px;
+    }
+
+    .section-content {
+        flex-direction: row;
+    }
+    
+    .section-content img, .section-content iframe {
+        max-width: 33vw;
+        margin-right: 1em;
     }
 
     footer {
