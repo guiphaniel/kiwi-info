@@ -252,7 +252,7 @@ header section {
     margin-bottom: 0.5em;
 }
 
-#mostRead {
+aside {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -262,7 +262,7 @@ header section {
     border-radius: var(--border-radius);
 }
 
-#mostRead a{
+aside a{
     padding: 1em;
     display: flex;
     align-items: center;
@@ -273,12 +273,16 @@ header section {
 }
 
 
-#mostRead a:hover{
+aside a:hover{
     background-color: var(--color-nav-hover);
 }
 
-#mostRead .article-title {
+aside .article-title {
     width: 100%;
+}
+
+#networks li svg {
+    margin-right: 2em;
 }
 
 main {
@@ -399,11 +403,17 @@ main picture img {
     display: flex;
     flex-direction: column;
     padding: 2em;
+    padding-top: 1em;
 }
 
 .section-content img, .section-content iframe {
     width: 100%;
     margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.section-content p {
+    margin-top: 1em;
 }
 
 footer {
@@ -736,7 +746,7 @@ header #checkNav:checked ~ul .icon {
         margin: 0 auto;
     }
 
-    #mostRead {
+    aside {
         width: 20em;
         margin-top: 0;
     }
