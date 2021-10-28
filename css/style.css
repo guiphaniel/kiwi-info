@@ -473,6 +473,10 @@ footer div ul a:hover {
     background-color: var(--color-nav-hover);
 }
 
+footer li {
+    margin-bottom: 1em;
+}
+
 /*FORMS*/
 
 form {
@@ -750,6 +754,14 @@ header #checkNav:checked ~ul .icon {
     aside {
         width: 20em;
         margin-top: 0;
+    }
+
+    aside h2 {
+        margin-bottom: 0.5em;
+    }
+
+    aside li {
+        margin: 1em 0;
     }
 
     .aside-content {
