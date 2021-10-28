@@ -522,7 +522,11 @@ button {
     margin-top: 2em;
     padding: 2em;
     border-radius: var(--border-radius);
-    background-color: gray;
+    background-color: var(--color-primary);
+}
+
+#comments h2 {
+    color: white;
 }
 
 .comment {
