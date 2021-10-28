@@ -163,7 +163,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 1em;
-    background-color: #fbf7ce;
+    background-color: var(--color-nav-hover);
 }
 
 #logo {
@@ -413,8 +413,9 @@ main picture img {
     margin: 2em;
     border-radius: var(--border-radius);
     width: 20em;
-    height: 25em;
-    background-color: var(--color-nav);
+    height: 26em;
+    background-color: var(--color-primary);
+    color: white;
     display: flex;
     flex-direction: column;
     transition: 0.5s ease-in-out all; 
@@ -424,7 +425,8 @@ main picture img {
 }
 
 .article-panel:hover {
-    background-color: var(--color-nav-hover);
+    background-color: #15599e;
+    box-shadow: 10px 5px 5px gray;
 }
 
 .article-panel img {
