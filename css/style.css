@@ -350,6 +350,40 @@ main picture img {
     padding-left: 3em;
 }
 
+.articles-wrapper{
+    display: flex;
+    justify-content: space-around;   
+    flex-wrap: wrap; 
+}
+
+.article-panel{
+    padding: 0;
+    margin: 2em;
+    border-radius: var(--border-radius);
+    width: 20em;
+    height: 25em;
+    background-color: var(--color-nav);
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out all; 
+    -moz-transition: 0.5s ease-in-out all; 
+    -webkit-transition: 0.5s ease-in-out all;
+    overflow: hidden;
+}
+
+.article-panel:hover {
+    background-color: var(--color-nav-hover);
+}
+
+.article-panel img {
+    width: 100%;
+    border: 0;
+}
+
+.article-panel p {
+    padding: 1em;    
+}
+
 .icon {
     width: 3em;
     height: 3em;    
