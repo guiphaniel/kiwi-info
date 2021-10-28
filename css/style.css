@@ -58,6 +58,28 @@ em, strong {
     font-weight: normal;
 }
 
+table, th, td {
+    padding: 0.5em;
+    border: 0.2em solid var(--color-primary);
+    border-collapse: collapse;
+}
+
+main table {
+    font-size: min(3vw, 100%);
+}
+
+.red-side {
+    background-color: #ff6565;
+}
+
+.blue-side {
+    background-color: #7979fe;
+}
+
+.winner {
+    background-color: var(--color-nav-hover);
+}
+
 :root {
     --color-primary: #032a52;
     --color-secondary: #ffffff;
@@ -88,18 +110,25 @@ h2 {
     font-size: 2em;
 }
 
-p, a, span, label, em, td, th, ul, legend, caption, placeholder {
+p, a, span, label, em, td, th, ul, legend, caption, abbr {
     font-family: "DINNextW1G";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
 }
 
 p {
     text-align: justify;
 }
 
-th {
+footer th {
     font-weight: bold;
     text-align: left;
     padding-right: 0.5em;
+}
+
+footer table, footer th, footer td {
+    border: 0;
 }
 
 img, iframe {
