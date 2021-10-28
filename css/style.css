@@ -15,6 +15,26 @@
   src: url("../fonts/questrial.ttf") format("truetype");
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--color-primary)
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-nav);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-nav-hover);
+  }
+
 *, *::after, *::before{
     padding: 0;
     margin: 0;
@@ -68,7 +88,7 @@ h2 {
     font-size: 2em;
 }
 
-p, a, span, label, em, td, th, ul {
+p, a, span, label, em, td, th, ul, legend, caption, placeholder {
     font-family: "DINNextW1G";
 }
 
@@ -404,12 +424,17 @@ footer div ul a:hover {
 
 /*FORMS*/
 
+form {
+    margin-top: 2em;
+}
+
 form fieldset {
     display: flex;
     flex-direction: column;
     padding: 1em 1em;
-    padding-top: 2em;
+    margin-top: 2em;
     border-radius: var(--border-radius);
+    border-color: var(--color-primary);
 }
 
 form fieldset input{
@@ -419,9 +444,22 @@ form fieldset input{
     user-select: none;
 }
 
+form fieldset textarea{
+    border-radius: var(--border-radius);
+    padding: 1em;
+    resize: none;
+    border-color: var(--color-primary);
+    outline-color: var(--color-nav);
+}
+
+button {
+    margin-top: 2em;
+}
+
 .input-group input {
     border-left-style: solid;
     border-left-width: 3px;
+    border-color: var(--color-primary);
     padding-left: 5px;
 }
 
@@ -429,6 +467,7 @@ form fieldset input{
     display: flex;
     flex-direction: column;
     padding: 1em 0;
+    max-width: 20em;
 }
 
 .input-group label {
@@ -471,6 +510,11 @@ form fieldset input{
 
 .check-group input {
     width: auto;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
 }
 
 #comments {
