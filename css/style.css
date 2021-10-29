@@ -551,9 +551,14 @@ footer li {
 
 form {
     margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 form fieldset {
+    width: 80vw;
+    max-width: 35em;
     display: flex;
     flex-direction: column;
     padding: 1em 1em;
@@ -577,8 +582,9 @@ form fieldset textarea{
     outline-color: var(--color-nav);
 }
 
-#couleur {
-    max-width: 24em;
+.form-container{
+    display: flex;
+    justify-content: center;
 }
 
 button {
@@ -611,7 +617,6 @@ button:not(:disabled):hover {
     display: flex;
     flex-direction: column;
     padding: 1em 0;
-    max-width: 20em;
 }
 
 .input-group label {
@@ -645,7 +650,6 @@ button:not(:disabled):hover {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    max-width: 20em;
 }
 
 .check-group input {
