@@ -577,6 +577,10 @@ form fieldset textarea{
     outline-color: var(--color-nav);
 }
 
+#couleur {
+    max-width: 24em;
+}
+
 button {
     margin-top: 2em;
     border: none;
