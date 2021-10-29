@@ -152,6 +152,10 @@ footer table, footer th, footer td {
     border: 0;
 }
 
+img {
+    height: 100%;
+}
+
 img, iframe {
     border-radius: var(--border-radius);
 }
@@ -187,7 +191,7 @@ header {
 
 #checkNav {
     display: inline-block;
-    width: 100vw;
+    width: 100%;
     height: 80px;
     opacity: 0;
     cursor: pointer;
@@ -287,9 +291,9 @@ header section {
     padding-top: 100px;
 }
 
-.article-title {
-    text-align: left;
+#navbar .article-title {
     padding: 0 1em;
+    text-align: justify;
 }
 
 .articleBody ul {
@@ -332,8 +336,9 @@ aside .article-title {
     width: 100%;
 }
 
-aside li svg {
-    max-width: 13%;
+aside .icon {
+    min-width: 3em;
+    max-width: 3em;   
     margin-right: 1em;
 }
 
@@ -448,6 +453,11 @@ main picture img {
 .icon {
     width: 3em;
     height: 3em;    
+    margin-right: 1em; 
+}
+
+#navbar .icon {
+    margin-right: 0;
 }
 
 .section-content {
@@ -667,6 +677,10 @@ header #checkNav:checked ~ul {
     flex-direction: column;
 }
 
+header #checkNav:checked ~ul .icon {
+    margin-right: 1em;
+}
+
 header #checkNav:checked ~ul > li {
     justify-content: flex-start;  
 }
@@ -754,6 +768,14 @@ header #checkNav:checked ~ul .icon {
         margin-left: 1em;
     }
 
+    .icon {
+        margin-right: 0;
+    }
+
+    footer .icon {
+        margin-right: 1em;
+    }
+
     #articles a {
         padding-left: 0;
     }
@@ -802,17 +824,22 @@ header #checkNav:checked ~ul .icon {
     }
 
     aside {
-        min-width: 15%;
-        max-width: 15%;
         margin-top: 0;
+        width: auto;
+        max-width: 20%;
+    }
+
+    aside a {
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     aside h2 {
         margin-bottom: 0.5em;
     }    
 
-    aside li svg {
-        max-width: 20%;
+    aside .icon {
+        margin-bottom: 1em;
     }
 
     .aside-content {
