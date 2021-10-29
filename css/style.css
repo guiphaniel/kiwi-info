@@ -422,7 +422,7 @@ main picture img {
     margin: 2em 0;
     border-radius: var(--border-radius);
     width: 20em;
-    height: 26em;
+    height: 27em;
     background-color: var(--color-primary);
     color: white;
     display: flex;
