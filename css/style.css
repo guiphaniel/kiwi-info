@@ -310,8 +310,6 @@ aside a{
     align-items: center;
     border-radius: var(--border-radius);
     transition: 0.5s ease-in-out all; 
-    -moz-transition: 0.5s ease-in-out all; 
-    -webkit-transition: 0.5s ease-in-out all;
 }
 
 aside li {
@@ -422,8 +420,6 @@ main picture img {
     display: flex;
     flex-direction: column;
     transition: 0.5s ease-in-out all; 
-    -moz-transition: 0.5s ease-in-out all; 
-    -webkit-transition: 0.5s ease-in-out all;
     overflow: hidden;
 }
 
@@ -512,8 +508,6 @@ footer div ul a {
     align-items: center;
     border-radius: var(--border-radius);
     transition: 0.5s ease-in-out all; 
-    -moz-transition: 0.5s ease-in-out all; 
-    -webkit-transition: 0.5s ease-in-out all;
 }
 
 footer div ul a:hover {
@@ -580,8 +574,6 @@ button {
     bottom: 1em;
     left: 0.5em;
     transition: 0.5s ease-in-out all; 
-    -moz-transition: 0.5s ease-in-out all; 
-    -webkit-transition: 0.5s ease-in-out all;
 }
 
 .input-group input:focus ~label,
@@ -598,8 +590,6 @@ button {
   position:absolute;
   background:var(--color-nav); 
   transition: 0.5s ease-in-out all; 
-  -moz-transition: 0.5s ease-in-out all; 
-  -webkit-transition: 0.5s ease-in-out all;
 }
 
 .check-group {
