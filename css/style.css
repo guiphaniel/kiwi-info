@@ -15,6 +15,14 @@
   src: url("../fonts/questrial.ttf") format("truetype");
 }
 
+:root {
+    --color-primary: #032a52;
+    --color-secondary: #ffffff;
+    --color-nav: #7de05f;
+    --color-nav-hover: #a1ec8a;
+    --border-radius: 10px;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -91,16 +99,6 @@ main h2 + p {
 
 .winner {
     background-color: #a1ec8a;
-}
-
-:root {
-    --color-primary: #032a52;
-    --color-secondary: #ffffff;
-    --color-background: #ffffff;
-    --color-text: #efefef;
-    --color-nav: #7de05f;
-    --color-nav-hover: #a1ec8a;
-    --border-radius: 10px;
 }
 
 .fa-primary {
