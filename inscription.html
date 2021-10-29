@@ -94,7 +94,7 @@
         <form action="https://ressources.site/" method="post" enctype="multipart/form-data">         
             <div>
                 <fieldset>
-                    <legend>Vos coordonnées</legend>
+                    <legend><h3>Vos coordonnées</h3></legend>
                     <div class="input-group">
                         <input type="email" name="email" id="email" placeholder=" " required>
                         <span class="barre"></span>
@@ -147,9 +147,9 @@
                     </div>         
                 </fieldset> 
                 <fieldset>
-                    <legend>Vos informations</legend>
+                    <legend><h3>Vos informations</h3></legend>
                     <div>
-                        <h2>Sexe</h2>
+                        <h4>Sexe</h4>
                         <div class="check-group">
                             <input type="radio" name="sexe" value="homme" id="homme"> 
                             <label for="homme">Homme</label> 
@@ -162,11 +162,11 @@
                             <input type="radio" name="sexe" value="autre" id="autre" checked> 
                             <label for="autre">Autre</label> 
                         </div>
-                    </div>
-                    <label for="photo">Avatar</label>
+                    </div>                    
+                    <h4><label for="photo">Avatar</label></h4>
                     <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
                     <div id="loisirs">
-                        <h2>Loisirs</h2>
+                        <h4>Loisirs</h4>
                         <div class="check-group">
                             <input type="checkbox" name="loisirs[]" value="lecture" id="lecture"> 
                             <label for="lecture">Lecture</label>
@@ -180,7 +180,7 @@
                             <label for="musique">Musique</label>
                         </div>
                     </div>
-                    <label for="couleur">Couleur préférée</label>
+                    <h4><label for="couleur">Couleur préférée</label></h4>
                     <input type="color" name="couleur" id="couleur">
                 </fieldset>
             </div>              
