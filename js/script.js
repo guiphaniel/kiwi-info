@@ -14,6 +14,16 @@ liens.forEach((lien) => { //pour chaque lien recupere
 const inputEmail = document.querySelector('#email')
 const validFormButton = document.querySelector('button.submit')
 
+//on defini des boolean pour connaitre la validite de notre formulaire
+birthdateIsValid = false;
+passwordIsValid = false;
+
+//si on se trouve sur un page ou uniquement l'adresse mail et requise, et pas le mot de passe, on defi le mot de passe comme etant valide
+const inputPassword = document.querySelector('#password')
+if(inputPassword == null)
+    passwordIsValid = true;
+
+
 // on ajoute l'attribut disabled au bouton du formulaire
 validFormButton.setAttribute('disabled', true)
 
@@ -26,13 +36,48 @@ function validMail(e) {
     
     // si la valeur de input correspond à la regex    
     if (regex.test(String(inputEmail.value).toLowerCase())){
-        // on enlève l'attribut disabled
-        validFormButton.removeAttribute('disabled')
+        birthdateIsValid = true;
+        //si le mot de passe est aussi valid, on active le bouton d'envoie du formulaire
+        if (passwordIsValid) {
+            // on enlève l'attribut disabled
+            validFormButton.removeAttribute('disabled')
+        }        
     }else{
-        // sinon on la remet
+        // sinon on le desactive
         validFormButton.setAttribute('disabled', true)
+        birthdateIsValid = false;
     }
 }
+
+/*VALIDATE PASSWORD*/
+
+// on défini des constantes qui représentent des parties de notre page
+const inputPassword2 = document.querySelector('#password2')
+
+// on ajoute l'attribut disabled au bouton du formulaire
+validFormButton.setAttribute('disabled', true)
+
+// on ajoute un comportement sur le input losqu'on lache une touche, suelement si il y a un mot de passe sur la page
+if(inputPassword != null && inputPassword2 != null) {
+    inputPassword.addEventListener('keyup', validPassword)
+    inputPassword2.addEventListener('keyup', validPassword)
+}
+
+function validPassword(e) {  
+    // si les deux mots de passe correspondent  
+    if (String(inputPassword.value) != '' && String(inputPassword.value) === String(inputPassword2.value)){
+        passwordIsValid = true;
+        if (birthdateIsValid) {
+            // on enlève l'attribut disabled
+            validFormButton.removeAttribute('disabled')
+        }       
+    }else{
+        // sinon on le remet
+        validFormButton.setAttribute('disabled', true)
+        passwordIsValid = false;
+    }
+}
+
 
 
 /*VALIDATE THE BIRTHDATE*/
