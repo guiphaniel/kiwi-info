@@ -15,8 +15,8 @@ const inputEmail = document.querySelector('#email')
 const validFormButton = document.querySelector('button.submit')
 
 //on defini des boolean pour connaitre la validite de notre formulaire
-birthdateIsValid = false;
-passwordIsValid = false;
+let birthdateIsValid = false;
+let passwordIsValid = false;
 
 //si on se trouve sur un page ou uniquement l'adresse mail et requise, et pas le mot de passe, on defi le mot de passe comme etant valide
 const inputPassword = document.querySelector('#password')
