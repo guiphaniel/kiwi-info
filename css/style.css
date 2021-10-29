@@ -435,7 +435,7 @@ main picture img {
 
 .article-panel{
     padding: 0;
-    margin: 2em 0;
+    margin: 2em;
     border-radius: var(--border-radius);
     width: 20em;
     height: 27em;
@@ -831,10 +831,6 @@ header #checkNav:checked ~ul .icon {
         margin-top: 124px;
         padding-top: 2em;
     }    
-
-    .article-panel {
-        margin: 2em;
-    }
 
     #aside-group {
         width: 100%;
