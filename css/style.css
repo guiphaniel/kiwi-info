@@ -582,11 +582,6 @@ form fieldset textarea{
     outline-color: var(--color-nav);
 }
 
-.form-container{
-    display: flex;
-    justify-content: center;
-}
-
 button {
     margin-top: 2em;
     border: none;
