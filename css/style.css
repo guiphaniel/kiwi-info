@@ -579,6 +579,21 @@ form fieldset textarea{
 
 button {
     margin-top: 2em;
+    border: none;
+    color: white;
+    background-color: var(--color-primary);
+    padding: 1em;
+    border-radius: 2em;
+    font-family: "DINNextW1G";
+    transition: 0.5s ease-in-out all; 
+}
+
+button:disabled {
+    opacity: 50%;
+}
+
+button:not(:disabled):hover {
+    background-color: #15599e;
 }
 
 .input-group input {
