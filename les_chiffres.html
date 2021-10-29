@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+            content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <title>Les chiffres</title>  
@@ -87,19 +87,20 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>Les chiffres</h1>
+    <main>        
+        <section class="title-group">
+            <h1>Les chiffres</h1>
+            <h2>Retrouvez ici tous les chiffres liés à l'actu !</h2>
+        </section>
         <div id="aside-group">
-            <article>
-                <section>
-                    <h2>Retrouvez ici tous les chiffres liés à l'actu !</h2>
-                    <div class="section-content">  
-                        <p>Comment faire une page des chiffres de l'actualité sans parler des Worlds de League of Legends ? <br> Rien que pour vous, nous avons resumé dans ce tableau les résultats de la phase de groupes des Worlds 2021 !</p>
-                    </div>
-                </section>
+            <article>      
+                <h3>LoL Worlds</h3>                   
+                <div class="articleBody">
+                    <p>Comment faire une page des chiffres de l'actualité sans parler des Worlds de League of Legends ? <br> Rien que pour vous, nous avons resumé dans ce tableau les résultats de la phase de groupes des Worlds 2021 !</p>
+                </div>       
                 <section>
                     <table>
-                        <caption>LoL Worlds 2021 - Phase de groupes</caption>
+                        <caption><h4>LoL Worlds 2021 - Phase de groupes</h4></caption>
                         <colgroup>
                             <col>
                             <col>
@@ -110,12 +111,14 @@
                             <col class="red-side-col">
                         </colgroup>
                         <thead>
-                            <th scope="col">Groupe</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Partie</th>
-                            <th class="blue-side" scope="col">Côté bleu</th>
-                            <th colspan="2" scope="col">Résultat</th>
-                            <th class="red-side" scope="col">Côté rouge</th>
+                            <tr>
+                                <th scope="col">Groupe</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Partie</th>
+                                <th class="blue-side" scope="col">Côté bleu</th>
+                                <th colspan="2" scope="col">Résultat</th>
+                                <th class="red-side" scope="col">Côté rouge</th>
+                            </tr>                            
                         </thead>
                         <tbody>
                             <tr>
