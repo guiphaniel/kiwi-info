@@ -23,12 +23,14 @@ const inputPassword = document.querySelector('#password')
 if(inputPassword == null)
     passwordIsValid = true;
 
+if (inputEmail != null) {
+    // on ajoute l'attribut disabled au bouton du formulaire
+    validFormButton.setAttribute('disabled', true)
 
-// on ajoute l'attribut disabled au bouton du formulaire
-validFormButton.setAttribute('disabled', true)
+    // on ajoute un comportement sur le input losqu'on lache une touche
+    inputEmail.addEventListener('keyup', validMail)
+}
 
-// on ajoute un comportement sur le input losqu'on lache une touche
-inputEmail.addEventListener('keyup', validMail)
 
 function validMail(e) {
     // la regex pour valider une adresse email
@@ -54,11 +56,13 @@ function validMail(e) {
 // on défini des constantes qui représentent des parties de notre page
 const inputPassword2 = document.querySelector('#password2')
 
-// on ajoute l'attribut disabled au bouton du formulaire
-validFormButton.setAttribute('disabled', true)
+
 
 // on ajoute un comportement sur le input losqu'on lache une touche, suelement si il y a un mot de passe sur la page
 if(inputPassword != null && inputPassword2 != null) {
+    // on ajoute l'attribut disabled au bouton du formulaire
+    validFormButton.setAttribute('disabled', true)
+
     inputPassword.addEventListener('keyup', validPassword)
     inputPassword2.addEventListener('keyup', validPassword)
 }
@@ -97,4 +101,8 @@ if (mm < 10) {
 } 
     
 today = yyyy + '-' + mm + '-' + dd;
-document.getElementById('birthdate').setAttribute('max', today); // on met la date maximale de l'input birthdate a la date definie dans today (aujourd'hui - 12 annees)
+let inputBirthdate = document.getElementById('birthdate');
+
+if (inputBirthdate != null) {
+    inputBirthdate.setAttribute('max', today); // on met la date maximale de l'input birthdate a la date definie dans today (aujourd'hui - 12 annees)
+}
