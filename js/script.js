@@ -10,19 +10,20 @@ liens.forEach((lien) => { //pour chaque lien recupere
 
 /*VALIDATE MAIL*/
 
-// on défini des constantes qui représentent des parties de notre page
+// on defini des constantes qui representent des parties de notre page
 const inputEmail = document.querySelector('#email')
 const validFormButton = document.querySelector('button.submit')
 
-//on defini des boolean pour connaitre la validite de notre formulaire
-let birthdateIsValid = false;
+//on defini des booleans pour connaitre la validite de notre formulaire
+let emailIsValid = false;
 let passwordIsValid = false;
 
-//si on se trouve sur un page ou uniquement l'adresse mail et requise, et pas le mot de passe, on defi le mot de passe comme etant valide
+//si on se trouve sur un page ou uniquement l'adresse mail et requise, et pas le mot de passe, on defini le mot de passe comme etant valide
 const inputPassword = document.querySelector('#password')
 if(inputPassword == null)
     passwordIsValid = true;
 
+//on verifie qu'on se trouve bien sur une page ou il y a un input d'email
 if (inputEmail != null) {
     // on ajoute l'attribut disabled au bouton du formulaire
     validFormButton.setAttribute('disabled', true)
@@ -37,48 +38,43 @@ function validMail(e) {
     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     
     // si la valeur de input correspond à la regex    
-    if (regex.test(String(inputEmail.value).toLowerCase())){
-        birthdateIsValid = true;
-        //si le mot de passe est aussi valid, on active le bouton d'envoie du formulaire
-        if (passwordIsValid) {
-            // on enlève l'attribut disabled
-            validFormButton.removeAttribute('disabled')
+    if (regex.test(String(inputEmail.value).toLowerCase())){        
+        emailIsValid = true; //on signale que l'email est valide
+        //si le mot de passe est aussi valide, on active le bouton d'envoie du formulaire
+        if (passwordIsValid) {            
+            validFormButton.removeAttribute('disabled') // on enlève l'attribut disabled
         }        
-    }else{
-        // sinon on le desactive
-        validFormButton.setAttribute('disabled', true)
-        birthdateIsValid = false;
+    }else{        
+        validFormButton.setAttribute('disabled', true) // sinon on l'ajoute
+        emailIsValid = false; //on signale que l'email est invalide
     }
 }
 
 /*VALIDATE PASSWORD*/
 
-// on défini des constantes qui représentent des parties de notre page
+// on défini la constante qui représente l'input du password2
 const inputPassword2 = document.querySelector('#password2')
 
-
-
-// on ajoute un comportement sur le input losqu'on lache une touche, suelement si il y a un mot de passe sur la page
+// on ajoute un comportement sur le input losqu'on lache une touche, seulement si il y a un mot de passe sur la page
 if(inputPassword != null && inputPassword2 != null) {
     // on ajoute l'attribut disabled au bouton du formulaire
     validFormButton.setAttribute('disabled', true)
 
+    // on ajoute un comportement sur le input losqu'on lache une touche
     inputPassword.addEventListener('keyup', validPassword)
     inputPassword2.addEventListener('keyup', validPassword)
 }
 
 function validPassword(e) {  
-    // si les deux mots de passe correspondent  
+    // si les deux mots de passe correspondent et qu'ils ne sont pas vides  
     if (String(inputPassword.value) != '' && String(inputPassword.value) === String(inputPassword2.value)){
-        passwordIsValid = true;
-        if (birthdateIsValid) {
-            // on enlève l'attribut disabled
-            validFormButton.removeAttribute('disabled')
+        passwordIsValid = true; //on signale que l'email est valide
+        if (emailIsValid) {            
+            validFormButton.removeAttribute('disabled') // on enlève l'attribut disabled
         }       
-    }else{
-        // sinon on le remet
-        validFormButton.setAttribute('disabled', true)
-        passwordIsValid = false;
+    }else{        
+        validFormButton.setAttribute('disabled', true) // sinon on le remet
+        passwordIsValid = false; //on signale que l'email est invalide
     }
 }
 
@@ -99,10 +95,11 @@ if (dd < 10) {
 if (mm < 10) {
    mm = '0' + mm;
 } 
-    
-today = yyyy + '-' + mm + '-' + dd;
-let inputBirthdate = document.getElementById('birthdate');
 
+today = yyyy + '-' + mm + '-' + dd; //on concatene les chaines
+let inputBirthdate = document.getElementById('birthdate'); //on recuper l'input de la date de naissance
+
+//si l'input existe, on met la date maximale de l'input birthdate a la date definie dans today (aujourd'hui - 12 annees)
 if (inputBirthdate != null) {
-    inputBirthdate.setAttribute('max', today); // on met la date maximale de l'input birthdate a la date definie dans today (aujourd'hui - 12 annees)
+    inputBirthdate.setAttribute('max', today);
 }
