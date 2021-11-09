@@ -523,9 +523,15 @@ footer div {
     margin: 0 1em;
 }
 
-footer address {
+footer address a {
+    margin-bottom: 1em;
     display: flex;
     flex-direction: column;
+}
+
+footer address ~p {
+    margin-top: 0;
+    text-align: center;
 }
 
 footer p {
