@@ -1,3 +1,4 @@
+<?php include_once 'include/config.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,7 +24,7 @@
         <div id="aside-group">
             <article>                
                 <picture class="intro-pic">
-                    <img src="../img/interieur1.jpg" alt="Interieur du Kiwi Info">
+                    <img src="<?= validateImage('../img/img-10_800x1.jpg')?>" alt="Interieur du Kiwi Info">
                 </picture>
                 <div class="articleBody">
                     <p>Nous sommes heureux de vous annoncer que le Kiwi Info ouvre officiellement ses portes dès aujourd'hui !</p>

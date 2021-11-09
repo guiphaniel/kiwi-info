@@ -8,3 +8,11 @@ function addActive($link) {
         return 'active';
     } 
 }
+
+function validateImage($link){
+    if (file_exists($link.'.webp') && str_contains($_SERVER['HTTP_ACCEPT'], 'image/webp')) {
+        return $link.'.webp';
+    } else {
+        return $link;
+    }
+}

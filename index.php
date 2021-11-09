@@ -1,3 +1,4 @@
+<?php include_once 'include/config.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,7 +18,7 @@
             <section>
                 <h3>Qui sommes nous ?</h3>
                 <div class="section-content">
-                    <img src="img/interieur1.jpg" alt="Interieur du Kiwi Info">
+                    <img src="<?= validateImage('img/img-10_800x1.jpg')?>" alt="Interieur du Kiwi Info">
                     <p>
                         Le Kiwi info, c'est un endroit où tous les passionnés de la tech peuvent se réunir, pour échanger sur l'actualité, et jouer aux jeux vidéo et de société mis à disposition. Vous avez besoin d'aide pour vos devoirs en informatique ? Vous voulez rencontrer de nouvelles personnes qui ont les mêmes centres d'intérêts que vous ? Venez nous rencontrer ! Âge minimum requis : <strong>12 ans</strong>.
                     </p>
