@@ -1,3 +1,4 @@
+<?php include_once 'include/config.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +14,7 @@
     <main>    
         <h1>Contact</h1>    
         <h2>Formulaire</h2>
-        <p>N'hésitez pas à remplir ce formulaire pour toute demande nous concernant.</p>
+        <p>N'hésitez pas à remplir ce formulaire pour toute demande nous concernant, ou à nous contacter à notre adresse mail : <a href="mailto:<?php echo MAIL_ADDRESS ?>"><?php echo MAIL_ADDRESS ?></a></p>
         <form action="https://ressources.site/" method="post">          
             <fieldset>
                 <legend><h3>Vos coordonnées</h3></legend>
