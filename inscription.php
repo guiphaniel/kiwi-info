@@ -14,7 +14,7 @@
         <h1>Inscription</h1>     
         <h2>Formulaire</h2>
         <p>Afin de bénéficier de l'intégralité de notre offre, inscrivez-vous ici.</p>
-        <form action="https://ressources.site/" method="post" enctype="multipart/form-data">         
+        <form action="ressources.php" method="post" enctype="multipart/form-data">         
             <div>
                 <fieldset>
                     <legend><h3>Vos coordonnées</h3></legend>
