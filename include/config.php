@@ -5,6 +5,6 @@ const POST_ADDRESS = "3 Avenue Pierre Semard, 01000 Bourg-en-Bresse";
 
 function addActive($link) {
     if ($_SERVER['PHP_SELF'] == $link) {
-        echo 'class=\'active\'';
+        return 'active';
     } 
 }
