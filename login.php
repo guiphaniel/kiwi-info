@@ -13,9 +13,8 @@
 <body>
     <?php include_once 'modules/header.php' ?>
     <main>    
-        <h1>Login</h1>    
-        <h2>Connexion</h2>
-        <p>Vous pouvez vous connecter ici !</p>
+        <h1>Connexion</h1>    
+        <h2>Vous pouvez vous connecter à votre compte ici !</h2>
         <form action="traitement.php" method="post">          
             <fieldset>
                 <legend><h3>Vos identifiants</h3></legend>
