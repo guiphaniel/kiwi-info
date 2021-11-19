@@ -74,17 +74,32 @@
                     <span>Les chiffres</span>
                 </a>                    
             </li>
-            <li class="<?= addActive('/login.php') ?>">
-                <a href="/login.php">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sign-in-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon"><g class="fa-group"><path fill="currentColor" d="M512 160v192a96 96 0 0 1-96 96h-84a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h84a32 32 0 0 0 32-32V160a32 32 0 0 0-32-32h-84a12 12 0 0 1-12-12V76a12 12 0 0 1 12-12h84a96 96 0 0 1 96 96z" class="fa-secondary"></path><path fill="currentColor" d="M369 273L201 441c-15 15-41 4.5-41-17v-96H24a23.94 23.94 0 0 1-24-24v-96a23.94 23.94 0 0 1 24-24h136V88c0-21.5 26-32 41-17l168 168a24.2 24.2 0 0 1 0 34z" class="fa-primary"></path></g></svg>
+            <?php 
+                if (isset($_SESSION['user'])) :
+                    ?>            
+            <li class="<?= addActive('/logout.php') ?>">
+                <a href="/logout.php">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sign-out-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon"><g class="fa-group"><path fill="currentColor" d="M64 160v192a32 32 0 0 0 32 32h84a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12H96a96 96 0 0 1-96-96V160a96 96 0 0 1 96-96h84a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12H96a32 32 0 0 0-32 32z" class="fa-secondary"></path><path fill="currentColor" d="M288 424v-96H152a23.94 23.94 0 0 1-24-24v-96a23.94 23.94 0 0 1 24-24h136V88c0-21.4 25.9-32 41-17l168 168a24.2 24.2 0 0 1 0 34L329 441c-15 15-41 4.52-41-17z" class="fa-primary"></path></g></svg>           
                     <?php 
-                        if(isset($_SESSION['admin']) && $_SESSION['admin'])
-                            echo "<span>Admin</span>";
+                        if(isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'])
+                            echo "<span>Déconnexion Admin</span>";
                         else
-                            echo "<span>Login</span>";
+                            echo "<span>Déconnexion</span>";
                     ?>
                 </a>                    
             </li>
+            <?php
+                else:
+                    ?>
+            <li class="<?= addActive('/login.php') ?>">
+                <a href="/login.php">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sign-in-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon"><g class="fa-group"><path fill="currentColor" d="M512 160v192a96 96 0 0 1-96 96h-84a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h84a32 32 0 0 0 32-32V160a32 32 0 0 0-32-32h-84a12 12 0 0 1-12-12V76a12 12 0 0 1 12-12h84a96 96 0 0 1 96 96z" class="fa-secondary"></path><path fill="currentColor" d="M369 273L201 441c-15 15-41 4.5-41-17v-96H24a23.94 23.94 0 0 1-24-24v-96a23.94 23.94 0 0 1 24-24h136V88c0-21.5 26-32 41-17l168 168a24.2 24.2 0 0 1 0 34z" class="fa-primary"></path></g></svg>
+                    <span>Connexion</span>
+                </a>                    
+            </li>
+            <?php
+                endif;
+                ?>
         </ul>
     </nav>        
 </header>
