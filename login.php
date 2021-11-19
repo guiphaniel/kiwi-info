@@ -28,6 +28,10 @@
                     <span class="barre"></span>
                     <label for="password">Mot de passe</label>
                 </div>
+                <div class="check-group">
+                    <input type="checkbox" name="remember-me" value="true" id="remember-me"> 
+                    <label for="remember-me">Se souvenir de moi</label>
+                </div>
             </fieldset>                     
             <div>
                 <button type="submit" class="submit">Soumettre</button>

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 const TEL_NUM = "641850305";
 const MAIL_ADDRESS = "guilhem.richaud@etu.univ-lyon1.fr";
 const POST_ADDRESS = "3 Avenue Pierre Semard, 01000 Bourg-en-Bresse";
@@ -14,5 +15,14 @@ function validateImage($link){
         return $link.'.webp';
     } else {
         return $link;
+    }
+}
+
+if(isset($_COOKIE['user'])) {
+    $_SESSION['user']['login'] = $_COOKIE['login']; 
+    if ($_COOKIE['login'] === 'admin' && $_COOKIE['password'] === 'admin') {
+        $_SESSION['user']['admin'] = true; 
+    } else {
+        $_SESSION['user']['admin'] = false; 
     }
 }

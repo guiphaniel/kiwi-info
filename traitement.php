@@ -7,4 +7,9 @@
         $_SESSION['user']['admin'] = false; 
     }
 
+    if (isset($_POST['remember-me']) && $_POST['remember-me'] == true){
+        setcookie("login", $_POST['login'], time() + 86400, '/');
+        setcookie("password", $_POST['password'], time() + 86400, '/');
+    }
+
     header("location: ./index.php");
