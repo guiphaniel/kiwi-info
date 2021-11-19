@@ -9,8 +9,8 @@ let emailIsValid = false;
 let passwordIsValid = false;
 
 //si on se trouve sur un page ou uniquement l'adresse mail et requise, et pas le mot de passe, on defini le mot de passe comme etant valide
-const inputPassword = document.querySelector('#password')
-if(inputPassword == null)
+const inputPassword2 = document.querySelector('#password2')
+if(inputPassword2 == null)
     passwordIsValid = true;
 
 //on verifie qu'on se trouve bien sur une page ou il y a un input d'email
@@ -43,7 +43,7 @@ function validMail(e) {
 /*VALIDATE PASSWORD*/
 
 // on défini la constante qui représente l'input du password2
-const inputPassword2 = document.querySelector('#password2')
+const inputPassword = document.querySelector('#password')
 
 // on ajoute un comportement sur le input losqu'on lache une touche, seulement si il y a un mot de passe sur la page
 if(inputPassword != null && inputPassword2 != null) {
