@@ -1,4 +1,4 @@
-<?php include_once __DIR__.'/../include/config.php' ?>
+<?php include_once '../include/config.php' ?>
 <!doctype html>
 <html lang="fr">
 <head>
