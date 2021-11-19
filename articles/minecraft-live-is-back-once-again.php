@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include_once __DIR__.'/../include/config.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
