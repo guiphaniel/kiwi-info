@@ -769,7 +769,7 @@ header #checkNav:checked ~ul .icon {
     }
 
     #navbar ul ul {    
-        width: 16.7%;  
+        width: 14.3%;  
         position: absolute;
         display: flex;
         flex-direction: column; 
