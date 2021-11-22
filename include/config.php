@@ -39,15 +39,6 @@ try {
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION );
 
-//mise a jour de la table
-$sql = 'UPDATE users SET updated = date() || \' \' || time()';
-try {
-    $nb_col = $pdo->exec($sql);
-    echo $nb_col;
-} catch (PDOException $e) {
-    echo 'La requête a échoué : ' . $e->getMessage();
-    die();
-}
 
 
 
