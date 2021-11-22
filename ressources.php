@@ -28,15 +28,17 @@
                 echo "</td></tr>";                                  
             }
             //image
-            //recuperation de l'extension
-            $fileType = $_FILES["photo"]['type'];
-            $fileType = substr($fileType, strpos($fileType, "/") + 1);  
-            //sauvegarde de l'image
-            move_uploaded_file(
-                $_FILES["photo"]['tmp_name'],
-                __DIR__ . '/img/uploaded-photo.' . $fileType
-            );  
-            echo "<tr><td>Avatar</td><td><img src=\"img/uploaded-photo." . $fileType . "\" alt=\"Avatar\"></td></tr>";
+            if(!empty($_FILES["photo"])){
+                //recuperation de l'extension
+                $fileType = $_FILES["photo"]['type'];
+                $fileType = substr($fileType, strpos($fileType, "/") + 1);  
+                //sauvegarde de l'image
+                move_uploaded_file(
+                    $_FILES["photo"]['tmp_name'],
+                    __DIR__ . '/img/uploaded-photo.' . $fileType
+                );  
+                echo "<tr><td>Avatar</td><td><img src=\"img/uploaded-photo." . $fileType . "\" alt=\"Avatar\"></td></tr>";
+            }
         ?>
         </tbody>
     </table>    
