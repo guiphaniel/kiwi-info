@@ -14,7 +14,7 @@
     <main>    
         <h1>Connexion</h1>    
         <h2>Vous pouvez vous connecter à votre compte ici !</h2>
-        <form action="traitement.php" method="post">          
+        <form action="traitement-login.php" method="post">          
             <fieldset>
                 <legend><h3>Vos identifiants</h3></legend>
                 <div class="input-group">
