@@ -18,18 +18,6 @@ function validateImage($link){
     }
 }
 
-//permet de se connecter avec les cookies
-if(isset($_COOKIE['user'])) { 
-    $_SESSION['user']['login'] = $_COOKIE['login']; 
-    if ($_COOKIE['login'] === 'admin' && $_COOKIE['password'] === 'admin') {
-        $_SESSION['user']['admin'] = true; 
-    } else {
-        $_SESSION['user']['admin'] = false; 
-    }
-}
-
-
-
 
 
 

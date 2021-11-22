@@ -32,11 +32,13 @@
     }
 
     //ajout user dans BD
+    $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    
     $sql = $pdo->prepare("INSERT INTO users (email, name, lastname, password, town, postal, address, updated) values(:email, :name, :lastname, :password, :town, :postal, :address, date() || ' ' || time())");
     $sql->bindParam('email', $_POST['email'], PDO::PARAM_STR);
     $sql->bindParam('name', $_POST['prenom'], PDO::PARAM_STR);
     $sql->bindParam('lastname', $_POST['nom'], PDO::PARAM_STR);
-    $sql->bindParam('password', $_POST['password'], PDO::PARAM_STR);
+    $sql->bindParam('password', $hash, PDO::PARAM_STR);
     $sql->bindParam('town', $_POST['ville'], PDO::PARAM_STR);
     $sql->bindParam('postal', $_POST['codePostal'], PDO::PARAM_INT);
     $sql->bindParam('address', $_POST['address'], PDO::PARAM_STR);
