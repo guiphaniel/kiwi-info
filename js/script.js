@@ -33,9 +33,11 @@ function validMail(e) {
         //si le mot de passe est aussi valide, on active le bouton d'envoie du formulaire
         if (passwordIsValid) {            
             validFormButton.removeAttribute('disabled') // on enlève l'attribut disabled
+            inputEmail.classList.remove('not-valid')
         }        
     }else{        
         validFormButton.setAttribute('disabled', true) // sinon on l'ajoute
+        inputEmail.classList.add('not-valid')
         emailIsValid = false; //on signale que l'email est invalide
     }
 }
@@ -61,9 +63,11 @@ function validPassword(e) {
         passwordIsValid = true; //on signale que l'email est valide
         if (emailIsValid) {            
             validFormButton.removeAttribute('disabled') // on enlève l'attribut disabled
+            inputPassword2.classList.remove('not-valid')
         }       
     }else{        
         validFormButton.setAttribute('disabled', true) // sinon on le remet
+        inputPassword2.classList.add('not-valid')
         passwordIsValid = false; //on signale que l'email est invalide
     }
 }
