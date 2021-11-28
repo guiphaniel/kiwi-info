@@ -889,12 +889,14 @@ header #checkNav:checked ~ul .icon {
     }
 
     .section-content {
-        flex-direction: row;
+        display: block;
+        overflow: hidden;
     }
     
     .section-content img, .section-content iframe {
         max-width: 33vw;
         margin-right: 1em;
+        float: left;
     }
 
     footer {
