@@ -459,7 +459,11 @@ main picture img {
 }
 
 .article-panel p {
-    padding: 1em;    
+    margin: 0;
+    padding: 1em;   
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
 }
 
 .icon {
