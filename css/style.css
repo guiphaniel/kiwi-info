@@ -114,6 +114,7 @@ h1 {
 
 h2 {
     font-size: 2.2em;
+    margin-bottom: 1em;
 }
 
 h3 {
@@ -308,13 +309,12 @@ header section {
     text-align: justify;
 }
 
-.articleBody ul {
-    list-style: inside;
-    margin-bottom: 0.5em;
+.title-group {
+    margin-bottom: 1em;
 }
 
-.articleBody h2 {
-    margin-top: 1em;
+.articleBody ul {
+    list-style: inside;
     margin-bottom: 0.5em;
 }
 
@@ -557,7 +557,7 @@ footer li {
 /*FORMS*/
 
 form {
-    margin: 2em;
+    margin: 0 2em;
     margin-bottom: 0;
     width: 100%;
     display: flex;
@@ -876,10 +876,6 @@ header #checkNav:checked ~ul .icon {
         flex-wrap: wrap;
         flex-direction: column;
     }
-
-    aside h2 {
-        margin-bottom: 0.5em;
-    }    
 
     aside nav {
         display: flex;
