@@ -12,10 +12,12 @@
 <body>
     <?php include_once 'modules/header.php' ?>
     <main>
-        <h1>Présentation</h1>
+        <section class="title-group">
+            <h1>Présentation</h1>
+            <h2>Le Kiwi est arrivé !</h2>
+        </section>
         <div id="aside-group">
-            <article>
-                <h2>Le Kiwi est arrivé !</h2>
+            <article>                
                 <section>
                     <h3>C'est parti mon Kiwi !</h3>
                     <div class="section-content">  
