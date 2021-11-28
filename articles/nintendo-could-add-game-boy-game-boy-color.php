@@ -13,6 +13,7 @@
     <?php include_once '../modules/header.php' ?>
     <main id="content">
         <section class="title-group">
+            <h1>Nintendo could add Game Boy, Game Boy Color titles to Switch Online service 'really&nbsp;soon'</h1>
             <h2>Adding even more value to Nintendo Switch&nbsp;Online</h2>
             <em>
                 By <a href="#" >Shawn Knight</a>
