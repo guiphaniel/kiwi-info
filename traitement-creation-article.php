@@ -1,4 +1,4 @@
-<?php include_once __DIR__.'/../include/config.php' ?>
+<?php include_once __DIR__.'/include/config.php' ?>
 <?php
     //si des donnees required ne sont pas presentent, on revient sur la page
     if (empty($_POST['titre1']) || empty($_POST['description']) || empty($_POST['contenu']) || empty($_FILES['photo'])) {
