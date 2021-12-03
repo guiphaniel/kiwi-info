@@ -591,7 +591,12 @@ form fieldset textarea{
     border-radius: var(--border-radius);
     padding: 1em;
     resize: none;
-    border-color: var(--color-primary);
+    border-color: #e03a2e;
+    outline-color:#e03a2e;
+}
+
+form fieldset textarea:valid {
+    border-color: var(--color-nav);
     outline-color: var(--color-nav);
 }
 
