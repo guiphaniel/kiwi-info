@@ -588,6 +588,7 @@ form fieldset input{
 }
 
 form fieldset textarea{
+    margin: 1em 0;
     border-radius: var(--border-radius);
     padding: 1em;
     resize: none;
