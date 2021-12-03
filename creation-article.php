@@ -35,11 +35,8 @@
                 </fieldset> 
                 <fieldset>
                     <legend><h3>Contenu</h3></legend>
-                    <div class="input-group">
-                        <input type="text" name="contenu" id="contenu" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="contenu">Contenu</label>                
-                    </div> 
+                    <label for="contenu">Contenu</label>
+                    <textarea name="contenu" id="contenu" cols="30" rows="10" required></textarea>     
                     <label for="photo">Illustration</label>
                     <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
                 </fieldset>                     
