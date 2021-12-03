@@ -593,6 +593,7 @@ form fieldset textarea{
     resize: none;
     border-color: #e03a2e;
     outline-color:#e03a2e;
+    transition: 0.5s ease-in-out all; 
 }
 
 form fieldset textarea:valid {
