@@ -21,12 +21,13 @@
     $fileType = substr($fileType, strpos($fileType, "/") + 1);  
 
     //verification login deja existant
-    $sql = $pdo->prepare("INSERT INTO articles VALUES (NULL, :titre1, :titre2, :description, :contenu, :imageType, date() || ' ' || time())");
+    $sql = $pdo->prepare("INSERT INTO articles VALUES (NULL, :titre1, :titre2, :description, :auteur, :contenu, :imageType, date() || ' ' || time())");
 
     $sql->execute([
         'titre1' => $_POST['titre1'],
         'titre2' => $_POST['titre2'],
         'description' => $_POST['description'],
+        'auteur' => $_SESSION['user']['name']??'no_name',
         'contenu' => $_POST['contenu'],
         'imageType' => $fileType
     ]);
