@@ -62,12 +62,21 @@
                     </ul>
                 </div>
             </li>
-            <li class="<?= addActive('/inscription.php') ?>">
-                <a href="/inscription.php">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="file-signature" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon"><g class="fa-group"><path fill="currentColor" d="M64 400a16 16 0 0 0 16 16h12.39a43.17 43.17 0 0 0 41-29.53L144 354.59l16.83 50.47c4.45 13.46 23.11 14.87 29.48 2.09l7.69-15.34a10.91 10.91 0 0 1 10-6.19 11.08 11.08 0 0 1 10.17 6.52A43 43 0 0 0 256 416h101l27-27.19v99.31A23.94 23.94 0 0 1 360 512H23.88A23.94 23.94 0 0 1 0 488V23.88A23.94 23.94 0 0 1 24 0h232v112a16 16 0 0 0 16 16h112v123.67L288 347v37h-32a11.63 11.63 0 0 1-9.35-6.5c-11.94-23.86-46.25-30.35-66-14.16l-13.88-41.64a24 24 0 0 0-45.55 0L103 376.34A11.21 11.21 0 0 1 92.39 384H80a16 16 0 0 0-16 16z" class="fa-secondary"></path><path fill="currentColor" d="M384 121.9a23.9 23.9 0 0 0-7-16.9L279.1 7a24 24 0 0 0-17-7H256v112a16 16 0 0 0 16 16h112zM288 347v69h69l161.67-162.78-67.88-67.88zm280.56-179.65l-31.87-31.87a25.48 25.48 0 0 0-36 0l-27.25 27.25 67.88 67.88 27.25-27.25a25.45 25.45 0 0 0-.01-36.01z" class="fa-primary"></path></g></svg>
-                    <span>Inscription</span>
-                </a>                    
-            </li>
+            <?php if (isset($_SESSION['user'])) : ?>            
+                <li class="<?= addActive('/creation-article.php') ?>">
+                    <a href="/creation-article.php">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="file-signature" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon"><g class="fa-group"><path fill="currentColor" d="M64 400a16 16 0 0 0 16 16h12.39a43.17 43.17 0 0 0 41-29.53L144 354.59l16.83 50.47c4.45 13.46 23.11 14.87 29.48 2.09l7.69-15.34a10.91 10.91 0 0 1 10-6.19 11.08 11.08 0 0 1 10.17 6.52A43 43 0 0 0 256 416h101l27-27.19v99.31A23.94 23.94 0 0 1 360 512H23.88A23.94 23.94 0 0 1 0 488V23.88A23.94 23.94 0 0 1 24 0h232v112a16 16 0 0 0 16 16h112v123.67L288 347v37h-32a11.63 11.63 0 0 1-9.35-6.5c-11.94-23.86-46.25-30.35-66-14.16l-13.88-41.64a24 24 0 0 0-45.55 0L103 376.34A11.21 11.21 0 0 1 92.39 384H80a16 16 0 0 0-16 16z" class="fa-secondary"></path><path fill="currentColor" d="M384 121.9a23.9 23.9 0 0 0-7-16.9L279.1 7a24 24 0 0 0-17-7H256v112a16 16 0 0 0 16 16h112zM288 347v69h69l161.67-162.78-67.88-67.88zm280.56-179.65l-31.87-31.87a25.48 25.48 0 0 0-36 0l-27.25 27.25 67.88 67.88 27.25-27.25a25.45 25.45 0 0 0-.01-36.01z" class="fa-primary"></path></g></svg>
+                        <span>Creation Article</span>
+                    </a>                    
+                </li>
+            <?php else: ?>
+                <li class="<?= addActive('/inscription.php') ?>">
+                    <a href="/inscription.php">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="file-signature" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon"><g class="fa-group"><path fill="currentColor" d="M64 400a16 16 0 0 0 16 16h12.39a43.17 43.17 0 0 0 41-29.53L144 354.59l16.83 50.47c4.45 13.46 23.11 14.87 29.48 2.09l7.69-15.34a10.91 10.91 0 0 1 10-6.19 11.08 11.08 0 0 1 10.17 6.52A43 43 0 0 0 256 416h101l27-27.19v99.31A23.94 23.94 0 0 1 360 512H23.88A23.94 23.94 0 0 1 0 488V23.88A23.94 23.94 0 0 1 24 0h232v112a16 16 0 0 0 16 16h112v123.67L288 347v37h-32a11.63 11.63 0 0 1-9.35-6.5c-11.94-23.86-46.25-30.35-66-14.16l-13.88-41.64a24 24 0 0 0-45.55 0L103 376.34A11.21 11.21 0 0 1 92.39 384H80a16 16 0 0 0-16 16z" class="fa-secondary"></path><path fill="currentColor" d="M384 121.9a23.9 23.9 0 0 0-7-16.9L279.1 7a24 24 0 0 0-17-7H256v112a16 16 0 0 0 16 16h112zM288 347v69h69l161.67-162.78-67.88-67.88zm280.56-179.65l-31.87-31.87a25.48 25.48 0 0 0-36 0l-27.25 27.25 67.88 67.88 27.25-27.25a25.45 25.45 0 0 0-.01-36.01z" class="fa-primary"></path></g></svg>
+                        <span>Inscription</span>
+                    </a>                    
+                </li>
+            <?php endif; ?> 
             <li class="<?= addActive('/les_chiffres.php') ?>">
                 <a href="/les_chiffres.php">
                     <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sort-numeric-up-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><g class="fa-group"><path fill="currentColor" d="M400 416h-16V304a16 16 0 0 0-16-16h-48a16 16 0 0 0-14.29 8.83l-16 32A16 16 0 0 0 304 352h16v64h-16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h96a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM330.17 34.91a79 79 0 0 0-55 54.17c-14.27 51.05 21.19 97.77 68.83 102.53a84.07 84.07 0 0 1-20.85 12.91c-7.57 3.4-10.8 12.47-8.18 20.34l9.9 20c2.87 8.63 12.53 13.49 20.9 9.91 58-24.77 86.25-61.61 86.25-132V112c-.02-51.21-48.4-91.34-101.85-77.09zM352 132a20 20 0 1 1 20-20 20 20 0 0 1-20 20z" class="fa-secondary"></path><path fill="currentColor" d="M107.31 36.69a16 16 0 0 0-22.62 0l-80 96C-5.35 142.74 1.78 160 16 160h48v304a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16V160h48c14.21 0 21.38-17.24 11.31-27.31z" class="fa-primary"></path></g></svg>
