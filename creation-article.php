@@ -38,7 +38,7 @@
                     <label for="contenu">Contenu</label>
                     <textarea name="contenu" id="contenu" cols="30" rows="10" required></textarea>     
                     <label for="photo">Illustration</label>
-                    <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
+                    <input type="file" name="photo" id="photo" accept="image/png, image/jpeg" required>
                 </fieldset>                     
                 <div>
                     <button type="submit" class="submit">Soumettre</button>
