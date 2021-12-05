@@ -4,6 +4,9 @@
         die();
     }    
 
+    $_SESSION['prenom'] = $_POST['login'];
+    $_SESSION['remember-me'] = $_POST['remember-me']??null;
+
     //Base de Donnees
     $dsn = 'sqlite:database.db';
     try {    
@@ -36,7 +39,7 @@
             $_SESSION['user']['admin'] = false; 
         }
 
-        if (isset($_POST['remember-me']) && $_POST['remember-me'] == true){
+        if (isset($_POST['remember-me']) && $_POST['remember-me'][0] == 'accepter'){
             setcookie("name", $_POST['login'], time() + 86400, '/');
         }
 

@@ -1,9 +1,22 @@
+<?php include_once 'include/config.php' ?>
 <?php
     //si des donnees required ne sont pas presentent, on revient sur la page
-    if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['telephone']) || empty($_POST['birthdate']) || empty($_POST['address']) || empty($_POST['codePostal']) || empty($_POST['ville'])) {
+    if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['telephone']) || empty($_POST['birthdate']) || empty($_POST['adresse']) || empty($_POST['codePostal']) || empty($_POST['ville']) || empty($_POST['sexe'])) {
         header("location: ./inscription.php");
         die();
     }
+
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['nom'] = $_POST['nom'];
+    $_SESSION['prenom'] = $_POST['prenom'];
+    $_SESSION['telephone'] = $_POST['telephone'];
+    $_SESSION['birthdate'] = $_POST['birthdate'];
+    $_SESSION['adresse'] = $_POST['adresse'];
+    $_SESSION['codePostal'] = $_POST['codePostal'];
+    $_SESSION['ville'] = $_POST['ville'];
+    $_SESSION['sexe'] = $_POST['sexe'];
+    $_SESSION['loisirs'] = $_POST['loisirs']??null;
+    $_SESSION['couleur'] = $_POST['couleur']??null;
 
     //sauvegarde avatar
     if(!empty($_FILES["photo"])){
@@ -46,14 +59,14 @@
     //ajout user dans BD
     $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
-    $sql = $pdo->prepare("INSERT INTO users (email, name, lastname, password, town, postal, address, updated) values(:email, :name, :lastname, :password, :town, :postal, :address, date() || ' ' || time())");
+    $sql = $pdo->prepare("INSERT INTO users (email, name, lastname, password, town, postal, address, updated) values(:email, :name, :lastname, :password, :town, :postal, :adresse, date() || ' ' || time())");
     $sql->bindParam('email', $_POST['email'], PDO::PARAM_STR);
     $sql->bindParam('name', $_POST['prenom'], PDO::PARAM_STR);
     $sql->bindParam('lastname', $_POST['nom'], PDO::PARAM_STR);
     $sql->bindParam('password', $hash, PDO::PARAM_STR);
     $sql->bindParam('town', $_POST['ville'], PDO::PARAM_STR);
     $sql->bindParam('postal', $_POST['codePostal'], PDO::PARAM_INT);
-    $sql->bindParam('address', $_POST['address'], PDO::PARAM_STR);
+    $sql->bindParam('adresse', $_POST['adresse'], PDO::PARAM_STR);
 
     try {
         $sql->execute();

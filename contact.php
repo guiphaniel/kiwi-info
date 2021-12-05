@@ -1,4 +1,9 @@
-<?php include_once 'include/config.php' ?>
+<?php 
+    include_once 'include/config.php'; 
+    include_once 'include/form-creator.php'; 
+    
+    $myForm = new FormCreator("traitement-contact.php", "post");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,44 +23,20 @@
             <p>N'hésitez pas à remplir ce formulaire pour toute demande nous concernant, ou à nous contacter à notre adresse mail : <a href="mailto:<?php echo MAIL_ADDRESS ?>"><?php echo MAIL_ADDRESS ?></a></p>
         </section>
         <div id="aside-group">
-            <form action="traitement-contact.php" method="post">          
+            <?php $myForm->begin()?>         
                 <fieldset>
                     <legend><h3>Vos coordonnées</h3></legend>
-                    <div class="input-group">
-                        <input type="email" name="email" id="email" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="tel" name="telephone" id="telephone" placeholder=" " pattern="[0-9]{10}" required>
-                        <span class="barre"></span>
-                        <label for="telephone">Numéro de téléphone</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" name="nom" id="nom" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="nom">Nom</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" name="prenom" id="prenom" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="prenom">Prenom</label>
-                    </div>                
+                    <?php $myForm->input("email", $_SESSION['email']??null, ['type' => 'email'])?>
+                    <?php $myForm->input("telephone", $_SESSION['telephone']??null, ['type' => 'tel', 'label' => 'Numéro de téléphone', 'pattern' => '[0-9]{10}'])?>           
+                    <?php $myForm->input("nom", $_SESSION['nom']??null)?>
+                    <?php $myForm->input("prenom", $_SESSION['prenom']??null)?>
                 </fieldset> 
                 <fieldset class="message">
                     <legend><h3>Votre message</h3></legend>
-                    <div class="input-group">
-                        <input type="text" name="sujet" id="sujet" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="sujet">Sujet du message</label>                
-                    </div> 
-                    <label for="message">Votre demande</label>
-                    <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                    <?php $myForm->input("sujet", $_SESSION['sujet']??null, ['label' => 'Sujet du message'])?>
+                    <?php $myForm->input("message", $_SESSION['message']??null, ['type' => 'textarea', 'label' => 'Votre demande'])?>
                 </fieldset>                     
-                <div>
-                    <button type="submit" class="submit">Soumettre</button>
-                </div>   
-            </form>
+            <?php $myForm->end()?>  
             <aside>
                 <div class="aside-content">
                     <h2>Nos réseaux</h2>

@@ -1,4 +1,10 @@
-<?php include_once 'include/config.php' ?>
+<?php 
+    include_once 'include/config.php'; 
+    include_once 'include/form-creator.php'; 
+    
+    $myForm = new FormCreator("traitement-inscription.php", "post", "multipart/form-data");
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,103 +24,28 @@
             <p>Afin de bénéficier de l'intégralité de notre offre, inscrivez-vous ici.</p>
         </section>
         <div id="aside-group">
-            <form action="traitement-inscription.php" method="post" enctype="multipart/form-data">         
-                <div>
-                    <fieldset>
-                        <legend><h3>Vos coordonnées</h3></legend>
-                        <div class="input-group">
-                            <input type="email" name="email" id="email" placeholder=" " required>
-                            <span class="barre"></span>
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" name="password" id="password" placeholder=" " required>
-                            <span class="barre"></span>
-                            <label for="password">Mot de passe</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" name="password2" id="password2" placeholder=" " required>
-                            <span class="barre"></span>
-                            <label for="password2">Vérification du mot de passe</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" name="nom" id="nom" placeholder=" " required>
-                            <span class="barre"></span>
-                            <label for="nom">Nom</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" name="prenom" id="prenom" placeholder=" " required>
-                            <span class="barre"></span>
-                            <label for="prenom">Prenom</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="tel" name="telephone" id="telephone" placeholder=" " pattern="[0-9]{10}" required>
-                            <span class="barre"></span>
-                            <label for="telephone">Numéro de téléphone</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="date" name="birthdate" id="birthdate" min='1950-01-01' max="2009-01-01" required> <!-- age minimum requis de 12 ans -->
-                            <span class="barre"></span>
-                            <label for="birthdate">Date de naissance</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" name="address" id="address" placeholder=" " required>
-                            <span class="barre"></span>
-                            <label for="address">Adresse</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" name="codePostal" id="codePostal" placeholder=" " pattern="[0-9]{5}" required>
-                            <span class="barre"></span>
-                            <label for="codePostal">Code postal</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" name="ville" id="ville" placeholder=" " required>   
-                            <span class="barre"></span>
-                            <label for="ville">Ville</label>
-                        </div>         
-                    </fieldset> 
-                    <fieldset>
-                        <legend><h3>Vos informations</h3></legend>
-                        <div>
-                            <h4>Sexe</h4>
-                            <div class="check-group">
-                                <input type="radio" name="sexe" value="homme" id="homme"> 
-                                <label for="homme">Homme</label> 
-                            </div>
-                            <div class="check-group">
-                                <input type="radio" name="sexe" value="femme" id="femme"> 
-                                <label for="femme">Femme</label>
-                            </div>
-                            <div class="check-group">
-                                <input type="radio" name="sexe" value="autre" id="autre" checked> 
-                                <label for="autre">Autre</label> 
-                            </div>
-                        </div>                    
-                        <h4><label for="photo">Avatar</label></h4>
-                        <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
-                        <div id="loisirs">
-                            <h4>Loisirs</h4>
-                            <div class="check-group">
-                                <input type="checkbox" name="loisirs[]" value="lecture" id="lecture"> 
-                                <label for="lecture">Lecture</label>
-                            </div>
-                            <div class="check-group">
-                                <input type="checkbox" name="loisirs[]" value="jeux" id="jeux"> 
-                                <label for="jeux">Jeux vidéos</label>
-                            </div>
-                            <div class="check-group">
-                                <input type="checkbox" name="loisirs[]" value="musique" id="musique"> 
-                                <label for="musique">Musique</label>
-                            </div>
-                        </div>
-                        <h4><label for="couleur">Couleur préférée</label></h4>
-                        <input type="color" name="couleur" id="couleur">
-                    </fieldset>
-                </div>              
-                <div>
-                    <button type="submit" class="submit">Soumettre</button>
-                </div>          
-            </form>
+            <?php $myForm->begin()?>      
+                <fieldset>
+                    <legend><h3>Vos coordonnées</h3></legend>
+                    <?php $myForm->input("email", $_SESSION['email']??null, ['type' => 'email'])?>
+                    <?php $myForm->input("password", null, ['type' => 'password', 'label' => 'Mot de passe'])?>
+                    <?php $myForm->input("password2", null, ['type' => 'password', 'label' => 'Vérification du mot de passe'])?>
+                    <?php $myForm->input("nom", $_SESSION['nom']??null)?>
+                    <?php $myForm->input("prenom", $_SESSION['prenom']??null)?>
+                    <?php $myForm->input("telephone", $_SESSION['telephone']??null, ['type' => 'tel', 'label' => 'Numéro de téléphone', 'pattern' => '[0-9]{10}'])?>
+                    <?php $myForm->input("birthdate", $_SESSION['birthdate']??null, ['type' => 'date', 'label' => 'Date de naissance'])?>
+                    <?php $myForm->input("adresse", $_SESSION['adresse']??null)?>
+                    <?php $myForm->input("codePostal", $_SESSION['codePostal']??null, ['label' => 'Code postal', 'pattern' => '[0-9]{5}'])?>
+                    <?php $myForm->input("ville", $_SESSION['ville']??null)?>     
+                </fieldset> 
+                <fieldset>
+                    <legend><h3>Vos informations</h3></legend>
+                    <?php $myForm->input("sexe", $_SESSION['sexe']??null, ['type' => 'radio', 'values' => ['homme', 'femme', 'autre']])?>                
+                    <?php $myForm->input("photo", null, ['type' => 'file', 'label' => 'Avatar', 'required' => null])?>                
+                    <?php $myForm->input("loisirs", $_SESSION['loisirs']??null, ['type' => 'checkbox', 'values' => ['lecture', 'jeux', 'musique']])?>                
+                    <?php $myForm->input("couleur", $_SESSION['couleur']??null, ['type' => 'color', 'label' => 'Couleur préférée', 'required' => null])?>                
+                </fieldset>                  
+            <?php $myForm->end()?>     
             <aside>
                 <div class="aside-content">
                     <h2>Nos réseaux</h2>

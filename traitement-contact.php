@@ -1,9 +1,17 @@
+<?php include_once 'include/config.php' ?>
 <?php
     //si des donnees required ne sont pas presentent, on revient sur la page
     if (empty($_POST['email']) || empty($_POST['telephone']) || empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['sujet']) || empty($_POST['message'])) {
         header("location: ./contact.php");
         die();
     }
+
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['telephone'] = $_POST['telephone'];
+    $_SESSION['nom'] = $_POST['nom'];
+    $_SESSION['prenom'] = $_POST['prenom'];
+    $_SESSION['sujet'] = $_POST['sujet'];
+    $_SESSION['message'] = $_POST['message'];
 
     $dsn = 'sqlite:database.db';
     try {    

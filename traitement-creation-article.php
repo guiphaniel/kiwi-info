@@ -6,6 +6,11 @@
         die();
     }
 
+    $_SESSION['titre1'] = $_POST['titre1'];
+    $_SESSION['titre2'] = $_POST['titre2']??null;
+    $_SESSION['description'] = $_POST['description'];
+    $_SESSION['contenu'] = $_POST['contenu'];
+
     $dsn = 'sqlite:database.db';
     try {    
         $pdo = new PDO($dsn);

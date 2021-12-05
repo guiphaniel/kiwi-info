@@ -1,4 +1,9 @@
-<?php include_once 'include/config.php' ?>
+<?php 
+    include_once 'include/config.php'; 
+    include_once 'include/form-creator.php'; 
+    
+    $myForm = new FormCreator("traitement-creation-article.php", "post", "multipart/form-data");
+?>
 <?php 
     if (!isset($_SESSION['user'])) {
         header('location: /index.php');
@@ -23,33 +28,19 @@
             <p>Vous pouvez créer un nouvel article ici</p>
         </section>
         <div id="aside-group">
-                <form action="traitement-creation-article.php" method="post" enctype="multipart/form-data">        
+            <?php $myForm->begin()?>   
                 <fieldset>
                     <legend><h3>Titres et informations</h3></legend>
-                    <div class="input-group">
-                        <input type="textfield" name="titre1" id="titre1" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="titre1">Titre</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="textfield" name="titre2" id="titre2" placeholder=" ">
-                        <span class="barre"></span>
-                        <label for="titre2">Sous-titre</label>
-                    </div>
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description" maxlength="255" required></textarea>     
+                    <?php $myForm->input("titre1", $_SESSION['titre1']??null, ['label' => "Titre"])?>
+                    <?php $myForm->input("titre2", $_SESSION['titre2']??null, ['label' => "Sous-titre", 'required' => null])?>
+                    <?php $myForm->input("description", $_SESSION['description']??null, ['type' => 'textarea', 'maxlength' => 255, 'rows' => 5])?>   
                 </fieldset> 
                 <fieldset>
                     <legend><h3>Contenu</h3></legend>
-                    <label for="contenu">Contenu</label>
-                    <textarea name="contenu" id="contenu" cols="30" rows="10" required></textarea>     
-                    <label for="photo">Illustration</label>
-                    <input type="file" name="photo" id="photo" accept="image/png, image/jpeg" required>
+                    <?php $myForm->input("contenu", $_SESSION['contenu']??null, ['type' => "textarea"])?> 
+                    <?php $myForm->input("photo", null, ['type' => 'file', 'label' => 'Illustration'])?>                
                 </fieldset>                     
-                <div>
-                    <button type="submit" class="submit">Soumettre</button>
-                </div>   
-            </form>
+                <?php $myForm->end()?>   
             <aside>
                 <div class="aside-content">
                     <h2>Nos réseaux</h2>

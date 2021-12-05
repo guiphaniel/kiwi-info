@@ -1,4 +1,9 @@
-<?php include_once 'include/config.php' ?>
+<?php 
+    include_once 'include/config.php'; 
+    include_once 'include/form-creator.php'; 
+    
+    $myForm = new FormCreator("traitement-login.php", "post");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,28 +22,14 @@
             <h2>Vous pouvez vous connecter à votre compte ici !</h2>
         </section>
         <div id="aside-group">
-            <form action="traitement-login.php" method="post">          
+            <?php $myForm->begin()?>           
                 <fieldset>
                     <legend><h3>Vos identifiants</h3></legend>
-                    <div class="input-group">
-                        <input type="text" name="login" id="login" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="login">Login</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="password" name="password" id="password" placeholder=" " required>
-                        <span class="barre"></span>
-                        <label for="password">Mot de passe</label>
-                    </div>
-                    <div class="check-group">
-                        <input type="checkbox" name="remember-me" value="true" id="remember-me"> 
-                        <label for="remember-me">Se souvenir de moi</label>
-                    </div>
+                    <?php $myForm->input("login", $_SESSION['prenom']??null)?>
+                    <?php $myForm->input("password", $_SESSION['password']??null, ['type' => 'password', 'label' => 'Mot de passe'])?>
+                    <?php $myForm->input("remember-me", $_SESSION['remember-me']??null, ['type' => 'checkbox', 'label' => 'Se souvenir de moi', 'values' => ['accepter']])?>                
                 </fieldset>                     
-                <div>
-                    <button type="submit" class="submit">Soumettre</button>
-                </div>   
-            </form>
+            <?php $myForm->end()?>  
             <aside>
                 <div class="aside-content">
                     <h2>Nos réseaux</h2>
