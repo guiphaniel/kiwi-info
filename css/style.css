@@ -164,10 +164,6 @@ footer .article-title {
     text-align: left;
 }
 
-img {
-    height: 100%;
-}
-
 img, iframe {
     border-radius: var(--border-radius);
     width: 100%;
