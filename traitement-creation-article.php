@@ -16,28 +16,38 @@
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
 
-    //recuperation de l'extension
-    $fileType = null;
-    $fileType = $_FILES["photo"]['type'];
-    $fileType = substr($fileType, strpos($fileType, "/") + 1);  
-
     //verification login deja existant
-    $sql = $pdo->prepare("INSERT INTO articles VALUES (NULL, :titre1, :titre2, :description, :auteur, :contenu, :imageType, date() || ' ' || time())");
+    $sql = $pdo->prepare("INSERT INTO articles VALUES (NULL, :titre1, :titre2, :description, :auteur, :contenu, null, date() || ' ' || time())");
 
     $sql->execute([
         'titre1' => $_POST['titre1'],
         'titre2' => $_POST['titre2'],
         'description' => $_POST['description'],
         'auteur' => $_SESSION['user']['name']??'no_name',
-        'contenu' => $_POST['contenu'],
-        'imageType' => $fileType
+        'contenu' => $_POST['contenu']
     ]);
 
-    $id = $pdo->query('SELECT MAX(id) FROM articles')->fetch()[0];
-    //sauvegarde de l'image
-    move_uploaded_file(
-        $_FILES["photo"]['tmp_name'],
-        __DIR__ . '/img/articles-illustrations/' . $id . '-' . str_replace(' ', '-', strtolower($_POST['titre1'])) .   '.' . $fileType
-    );  
+    if(isset($_FILES["photo"])) {
+        //recuperation de l'id
+        $id = $pdo->query('SELECT MAX(id) FROM articles')->fetch()[0];
+
+        //creation du nom du fichier
+        $fileType = $_FILES["photo"]['type'];
+        $fileType = substr($fileType, strpos($fileType, "/") + 1);  
+        $fileName = $id . '-' . str_replace(' ', '-', strtolower($_POST['titre1'])) .   '.' . $fileType;
+
+        //sauvegarde du chemin de l'image dans la bd
+        $sql = $pdo->prepare('UPDATE articles set image = :fileName where id = :id');
+        $sql->execute([
+            'fileName' => $fileName,
+            'id' => $id
+        ]);
+
+        //sauvegarde de l'image en local
+        move_uploaded_file(
+            $_FILES["photo"]['tmp_name'],
+            __DIR__ . '/img/articles-illustrations/' . $fileName
+        ); 
+    }    
 
     header('location: blog.php');
