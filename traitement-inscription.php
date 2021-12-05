@@ -13,7 +13,7 @@
         //sauvegarde de l'image
         move_uploaded_file(
             $_FILES["photo"]['tmp_name'],
-            __DIR__ . '/img/avatars/' . $_POST['prenom'] . '.' . $fileType
+            __DIR__ . '/img/avatars/' . str_replace(' ', '-', strtolower($_POST['prenom'])) . '.' . $fileType
         );  
     }
 
