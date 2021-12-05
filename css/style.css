@@ -919,6 +919,10 @@ header #checkNav:checked ~ul .icon {
         float: left;
     }
 
+    main picture img {
+        margin-top: 0;
+    }
+
     footer {
         flex-direction: row;
         justify-content: space-around;
