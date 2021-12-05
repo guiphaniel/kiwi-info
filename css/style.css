@@ -324,6 +324,10 @@ aside {
     border-radius: var(--border-radius);
 }
 
+aside ul {
+    width: 100%;
+}
+
 aside a{
     padding: 1em;
     display: flex;
