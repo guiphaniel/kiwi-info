@@ -13,15 +13,7 @@
     $_SESSION['sujet'] = $_POST['sujet'];
     $_SESSION['message'] = $_POST['message'];
 
-    $dsn = 'sqlite:database.db';
-    try {    
-        $pdo = new PDO($dsn);
-    } catch (PDOException $e) {
-        echo 'Connexion échouée : ' . $e->getMessage();
-        die();
-    }
-
-    $pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION );
+    include_once __DIR__.'/include/start-db.php';
 
     //ajout message dans BD
     $sql = $pdo->prepare("INSERT INTO contact (date, email, telephone, nom, prenom, sujet, message) values(date() || ' ' || time(), :email, :telephone, :nom, :prenom, :sujet, :message)");

@@ -30,15 +30,7 @@
         );  
     }
 
-    $dsn = 'sqlite:database.db';
-    try {    
-        $pdo = new PDO($dsn);
-    } catch (PDOException $e) {
-        echo 'Connexion échouée : ' . $e->getMessage();
-        die();
-    }
-
-    $pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION );
+    include_once __DIR__.'/include/start-db.php';
 
     //verification login deja existant
     $sql = $pdo->prepare("SELECT name from users where name like :name");

@@ -11,15 +11,7 @@
     $_SESSION['description'] = $_POST['description'];
     $_SESSION['contenu'] = $_POST['contenu'];
 
-    $dsn = 'sqlite:database.db';
-    try {    
-        $pdo = new PDO($dsn);
-    } catch (PDOException $e) {
-        echo 'Connexion échouée : ' . $e->getMessage();
-        die();
-    }
-
-    $pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
+    include_once __DIR__.'/include/start-db.php';
 
     //verification login deja existant
     $sql = $pdo->prepare("INSERT INTO articles VALUES (NULL, :titre1, :titre2, :description, :auteur, :contenu, null, date() || ' ' || time())");

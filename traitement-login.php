@@ -7,16 +7,7 @@
     $_SESSION['prenom'] = $_POST['login'];
     $_SESSION['remember-me'] = $_POST['remember-me']??null;
 
-    //Base de Donnees
-    $dsn = 'sqlite:database.db';
-    try {    
-        $pdo = new PDO($dsn);
-    } catch (PDOException $e) {
-        echo 'Connexion échouée : ' . $e->getMessage();
-        die();
-    }
-
-    $pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION );
+    include_once __DIR__.'/include/start-db.php';
 
     $sql = $pdo->prepare("SELECT password from users where name like :name");
     try {
