@@ -896,6 +896,10 @@ header #checkNav:checked ~ul .icon {
         flex-direction: column;
     }
 
+    aside h2 {
+        text-align: center;
+    }
+
     aside nav {
         display: flex;
         justify-content: center;
