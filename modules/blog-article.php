@@ -42,7 +42,6 @@
             <nav>
                 <ul>
                     <?php
-                        include_once __DIR__.'/../include/start-db.php';
                         $sql = 'select * from articles order by id desc limit 5';
                         
                         foreach ($pdo->query($sql) as $row): ?>                            
