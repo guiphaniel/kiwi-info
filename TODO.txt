@@ -1,0 +1,4 @@
+par guilhem il y a XXXXX ans, mois, jours... (cd dateTime())
+sauvegarder les avatars dans la bd et l'afficher dans la navbar
+password2 not valid apres remplissage de SESSION ? + email not valid quand rafraichi la page
+remplir les checkboxes en fonction de $_SESSION (inscription + login)
