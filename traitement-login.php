@@ -19,7 +19,14 @@
         die();
     }
 
-    $hash = $sql->fetch()['password'];
+    $row = $sql->fetch();
+
+    if($row)
+        $hash = $row['password'];
+    else {
+        header("location: ./login.php");
+        exit();
+    }
 
     if(password_verify($_POST['password'], $hash)){
         session_start(); // on ouvre la session
