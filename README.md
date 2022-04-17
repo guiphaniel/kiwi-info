@@ -1,4 +1,4 @@
-# Le KiwI info
+# Le Kiwi info
 
 ## Présentation
 
